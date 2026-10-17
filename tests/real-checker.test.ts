@@ -21,3 +21,13 @@ test('model function envelopes execute as probe bodies instead of silently retur
   assert.deepEqual(await new Function('return (async()=>{'+parsed.code+'})()')(),[1]);
  }
 });
+
+test('retention requires independent transfer, a frozen candidate and complete valid measurements',async()=>{
+ const {transferRetentionErrors}=await import('../src/learn/retain-checker.ts');
+ const good={executableCheckerTransferProven:true,unchanged:true,modelCallsDuringTransfer:0,development:{passed:true,cases:12},results:[{url:'https://other.example',transferred:true,reproducedMeasurements:1,first:{unverifiedMeasurements:0,baselineErrors:[]},independent:{unverifiedMeasurements:0,baselineErrors:[]}}]};
+ assert.deepEqual(transferRetentionErrors(good),[]);
+ assert.ok(transferRetentionErrors({...good,unchanged:false}).length);
+ assert.ok(transferRetentionErrors({...good,modelCallsDuringTransfer:1}).length);
+ assert.ok(transferRetentionErrors({...good,results:[{...good.results[0],error:'Unavailable'}]}).length);
+ assert.ok(transferRetentionErrors({...good,development:{passed:false,cases:12}}).length);
+});
