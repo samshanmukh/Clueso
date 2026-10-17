@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Pawtrail — walks your dog will love</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.dl-row{display:flex;gap:20px;justify-content:center;margin-top:28px}
+.ios-cta span.art{display:block;width:180px;height:40px;background-image:url("app-store.svg");background-repeat:no-repeat;background-size:180px 40px}
+dialog{border:0;border-radius:12px;padding:20px;box-shadow:0 8px 30px #0003}
+</style>
+<script async src="https://static.hotjar.com/c/hotjar-1618033.js?sv=7"></script>
+</head><body>
+<header><h1>Pawtrail</h1><p>Walks your dog will love, mapped.</p>
+<div class="dl-row">
+  <a class="ios-cta" href="https://apps.apple.com/gb/app/pawtrail/id9876543210" title="App Store"><span class="art"></span></a>
+  <a href="https://play.google.com/store/apps/details?id=app.pawtrail"><img src="google-play.svg" alt="Get it on Google Play" width="135" height="40"></a>
+</div></header>
+<footer><a href="legal/privacy.html">Your privacy</a></footer>
+<dialog id="cmp" open><p>Pawtrail uses cookies for analytics.</p><button id="agree">I agree</button></dialog>
+<script>
+document.getElementById('agree').addEventListener('click',function(){
+  document.getElementById('cmp').close();
+  var s=document.createElement('script');s.src='https://cdn.segment.com/analytics.js/v1/pAwTrAiLkEy/analytics.min.js';document.head.appendChild(s);
+});
+</script>
+</body></html>

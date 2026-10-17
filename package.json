@@ -1,0 +1,53 @@
+{
+  "name": "clueso",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "doctor": "node src/cli.ts doctor",
+    "models": "node src/cli.ts models",
+    "smoke:crusoe": "node src/cli.ts smoke crusoe",
+    "smoke:you": "node src/cli.ts smoke you",
+    "smoke": "node src/cli.ts smoke all",
+    "search": "node src/cli.ts search",
+    "contents": "node src/cli.ts contents",
+    "inspect": "node src/cli.ts inspect",
+    "asset": "node src/cli.ts asset",
+    "agent:smoke": "node src/cli.ts agent-smoke",
+    "browser:install": "playwright install chromium --no-shell",
+    "test": "node --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "ui": "node src/server.ts",
+    "audit": "node src/lp.ts audit",
+    "learn": "node src/lp.ts learn",
+    "eval": "node src/lp.ts eval",
+    "eval:fresh": "node src/eval/fresh-transfer.ts",
+    "demo": "node src/lp.ts demo",
+    "brain": "node src/lp.ts brain",
+    "check-model": "node src/lp.ts check-model",
+    "selftest": "node src/selftest.ts",
+    "build:ui": "node scripts/build-ui.ts",
+    "learn:real": "node src/learn/real-sites.ts",
+    "learn:checker": "node src/learn/real-checker.ts"
+  },
+  "dependencies": {
+    "border-beam": "^1.4.1",
+    "bot-avatars": "^0.2.2",
+    "framer-motion": "^14.3.0",
+    "playwright": "^1.56.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "thinking-orbs": "^0.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.0"
+  },
+  "description": "Self-improving agent team that audits AI-built websites for third-party tracking, privacy-policy disclosure and brand-badge misuse."
+}

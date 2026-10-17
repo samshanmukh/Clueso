@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Glowfit — workouts that adapt</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.play-link{display:inline-block;width:150px;height:60px;background:url(google-play.svg) no-repeat;background-size:100% 100%}
+</style>
+<!-- Meta Pixel: loads before consent -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.queue.push(arguments)};n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4815162342');fbq('track','PageView');
+</script>
+<!-- Session recording: loads before consent -->
+<script async src="https://static.hotjar.com/c/hotjar-3141592.js?sv=6"></script>
+</head><body>
+<header><h1>Glowfit</h1><p>Workouts that adapt to how you slept.</p>
+<div class="stores">
+  <a href="https://apps.apple.com/us/app/glowfit/id1234567890"><img src="app-store.svg" alt="Download on the App Store" width="220" height="44" style="filter:hue-rotate(140deg)"></a>
+  <a class="play-link" href="https://play.google.com/store/apps/details?id=fit.glow" aria-label="Get it on Google Play"></a>
+</div></header>
+<footer><a href="privacy.html">Privacy Policy</a></footer>
+<div class="consent" id="cookie-bar"><span>We use cookies to improve your experience.</span><button id="accept">Accept all</button></div>
+<script>
+document.getElementById('accept').onclick=function(){
+  document.getElementById('cookie-bar').remove();
+  var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-GLOW123';document.head.appendChild(g);
+  var m=document.createElement('script');m.async=true;m.src='https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';document.head.appendChild(m);
+};
+</script>
+</body></html>

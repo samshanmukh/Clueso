@@ -1,0 +1,10 @@
+{
+  "_note": "Evaluation oracle. Read ONLY by src/eval. Never passed to agents.",
+  "splits": { "dev": ["app-a", "app-c"], "heldout": ["app-b", "app-d"] },
+  "apps": {
+    "app-a": ["pre_consent_tracking:meta-pixel", "pre_consent_tracking:hotjar", "undisclosed_vendor:mixpanel", "undisclosed_vendor:hotjar", "badge_misuse:apple-app-store-badge", "badge_misuse:google-play-badge"],
+    "app-c": [],
+    "app-b": ["pre_consent_tracking:hotjar", "undisclosed_vendor:hotjar", "undisclosed_vendor:segment", "badge_misuse:apple-app-store-badge"],
+    "app-d": []
+  }
+}

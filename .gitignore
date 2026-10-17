@@ -1,0 +1,18 @@
+/The Recursive Agents Hackathon Participant Guide 👩_💻👨_💻.docx
+
+# Local credentials and generated files
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+artifacts/
+.DS_Store
+*.tsbuildinfo
+
+# Clueso runtime
+data/
+brain/candidates/
+brain/rejected/
+*.tgz
+/src/ui/vendor-effects.js

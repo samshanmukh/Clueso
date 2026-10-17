@@ -1,0 +1,109 @@
+{
+  "active": "v2",
+  "versions": [
+    "v0",
+    "v1",
+    "v2"
+  ],
+  "decisions": [
+    {
+      "candidate": "v1",
+      "parent": "v0",
+      "at": "2026-10-17T20:22:43.496Z",
+      "accepted": true,
+      "kind": "mixed",
+      "summary": "mixed candidate v1: ACCEPTED — +3 true finding(s), 6 fewer unresolved item(s), no new false findings, no regressions. Passed 9 development measurement contract cases.",
+      "parentMetrics": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1,
+        "recall": 0.5,
+        "unresolved": 6,
+        "probeErrors": 0,
+        "ms": 3079,
+        "apps": [
+          {
+            "app": "app-a",
+            "tp": [
+              "pre_consent_tracking:meta-pixel",
+              "undisclosed_vendor:mixpanel",
+              "badge_misuse:apple-app-store-badge"
+            ],
+            "fp": [],
+            "fn": [
+              "pre_consent_tracking:hotjar",
+              "undisclosed_vendor:hotjar",
+              "badge_misuse:google-play-badge"
+            ],
+            "unresolved": 3
+          },
+          {
+            "app": "app-c",
+            "tp": [],
+            "fp": [],
+            "fn": [],
+            "unresolved": 3
+          }
+        ]
+      },
+      "candidateMetrics": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "unresolved": 0,
+        "probeErrors": 0,
+        "ms": 3099,
+        "apps": [
+          {
+            "app": "app-a",
+            "tp": [
+              "pre_consent_tracking:hotjar",
+              "undisclosed_vendor:hotjar",
+              "pre_consent_tracking:meta-pixel",
+              "undisclosed_vendor:mixpanel",
+              "badge_misuse:apple-app-store-badge",
+              "badge_misuse:google-play-badge"
+            ],
+            "fp": [],
+            "fn": [],
+            "unresolved": 0
+          },
+          {
+            "app": "app-c",
+            "tp": [],
+            "fp": [],
+            "fn": [],
+            "unresolved": 0
+          }
+        ]
+      },
+      "reasons": [
+        "+3 true finding(s), 6 fewer unresolved item(s), no new false findings, no regressions. Passed 9 development measurement contract cases."
+      ]
+    },
+    {
+      "candidate": "v2",
+      "parent": "v1",
+      "at": "2026-10-17T22:01:09.498Z",
+      "accepted": true,
+      "kind": "vendor",
+      "summary": "Maintainer-reviewed Cloudflare Web Analytics rule; official documentation, 16 regression tests, and observed-site classification check.",
+      "parentMetrics": {
+        "unknownVendors": 1
+      },
+      "candidateMetrics": {
+        "unknownVendors": 0,
+        "regressionTestsPassed": 16,
+        "disclosureCandidate": true
+      },
+      "reasons": [
+        "Manual reviewed knowledge addition, not an autonomous learning-gate accuracy claim. Official documentation identifies the observed beacon.",
+        "16 targeted regression tests and type checking passed; executable probes and existing vendor rules unchanged.",
+        "Stored snapshot resolves the unknown domain to Cloudflare Web Analytics and retains the missing-disclosure candidate; no blanket consent violation inferred."
+      ]
+    }
+  ]
+}

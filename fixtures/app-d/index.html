@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Leafnote — notes that grow</title>
+<link rel="stylesheet" href="base.css">
+<style>
+.badge{display:inline-block;height:44px}
+.badge-ios{width:132px;background:url('app-store.svg') center/132px 44px no-repeat}
+.badge-play{width:240px;background:url('google-play.svg') center/contain no-repeat}
+</style>
+</head><body>
+<header><h1>Leafnote</h1><p>Notes that grow with you.</p>
+<div class="stores">
+  <a href="https://apps.apple.com/us/app/leafnote/id1112223334"><i class="badge badge-ios" aria-label="Download on the App Store"></i></a>
+  <a href="https://play.google.com/store/apps/details?id=io.leafnote"><i class="badge badge-play" aria-label="Get it on Google Play"></i></a>
+</div></header>
+<footer><a href="privacy.html">Privacy policy</a></footer>
+<div class="consent" id="c"><span>Analytics cookies?</span><button data-action="allow">Allow</button></div>
+<script>
+document.querySelector('[data-action=allow]').onclick=function(){
+  document.getElementById('c').remove();
+  var s=document.createElement('script');s.src='https://cdn.segment.com/analytics.js/v1/LeAfKeY/analytics.min.js';document.head.appendChild(s);
+  var h=document.createElement('script');h.src='https://static.hotjar.com/c/hotjar-1414213.js?sv=6';document.head.appendChild(h);
+};
+</script>
+</body></html>
