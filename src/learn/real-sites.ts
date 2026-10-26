@@ -23,8 +23,21 @@ export function compareRealSiteSnapshot(snapshot:ScanResult,parent:BrainVersion,
     return {beforeUnknown:base.unresolved.filter(u=>u.type==='unknown_third_party').length,afterUnknown:next.unresolved.filter(u=>u.type==='unknown_third_party').length,recognitions,unverifiedBaselineFindingKeys:base.findings.map(f=>f.key),unverifiedCandidateFindingKeys:next.findings.map(f=>f.key),probeErrors:snapshot.probeErrors};
 }
 
+/** Pin a frozen research candidate for an explicitly requested audit without promoting it. */
+export async function loadFrozenVendorCandidate(job:string){
+  if(!/^real-[\w-]+$/.test(job))throw new Error('Invalid vendor-learning candidate id');
+  const dir=path.join(config.dataDir,'real-learning',job);
+  const frozen=JSON.parse(await fs.readFile(path.join(dir,'freeze.json'),'utf8'));
+  const candidate=JSON.parse(await fs.readFile(path.join(dir,'candidate.json'),'utf8')) as BrainVersion;
+  const parent=loadBrain();
+  if(digest(candidate)!==frozen.fingerprint)throw new Error('Vendor candidate changed after freezing');
+  if(digest(parent)!==frozen.parentFingerprint||candidate.parent!==parent.version)throw new Error('Active parent changed; vendor candidate needs revalidation');
+  if(JSON.stringify(candidate.probes)!==JSON.stringify(parent.probes)||JSON.stringify(candidate.brands)!==JSON.stringify(parent.brands)||JSON.stringify(candidate.vendors.slice(0,parent.vendors.length))!==JSON.stringify(parent.vendors))throw new Error('Vendor candidate changed existing rules or inspection code');
+  return {brain:candidate,learningCandidate:{job,parent:parent.version,scope:'Experimental vendor research candidate; not retained in the active brain. Consent and disclosure conclusions depend on the proposed vendor rules.'}};
+}
+
 /** Real-site experiment: no fixture oracle, invented labels, or automatic production promotion. */
-export async function learnOnRealSites(trainingUrl='https://zupapps.com/', holdouts=DEFAULT_HOLDOUTS) {
+export async function learnOnRealSites(trainingUrl='https://zupapps.com/', holdouts=DEFAULT_HOLDOUTS.filter(url=>new URL(url).hostname.replace(/^www\./,'')!==new URL(trainingUrl).hostname.replace(/^www\./,''))) {
   await validatePublicUrl(trainingUrl);
   for(const url of holdouts){await validatePublicUrl(url);if(new URL(url).hostname===new URL(trainingUrl).hostname)throw new Error('Training and transfer hosts must differ');}
   if(!llmAvailable())throw new Error('Real-site learning requires live inference');
@@ -32,22 +45,25 @@ export async function learnOnRealSites(trainingUrl='https://zupapps.com/', holdo
   const dir=path.join(config.dataDir,'real-learning',job);
   await fs.mkdir(dir,{recursive:true});
   const parent=loadBrain(), parentFingerprint=digest(parent), candidate=forkBrain(parent,nextVersionName());
-  const startedAt=new Date().toISOString(), errors:{stage:string;error:string}[]=[];
+  const startedAt=new Date().toISOString(),callsAtStart=usage.calls, errors:{stage:string;domain?:string;error:string}[]=[];
   const write=async(name:string,value:unknown)=>fs.writeFile(path.join(dir,name),JSON.stringify(value,null,2));
   emit('learner','info',`Real-site learning on ${trainingUrl}; transfer hosts withheld from the learner`,undefined,job);
   const training=await scan(trainingUrl,parent,path.join(dir,'training'),job);
   const before=runChecks(training,parent);
   const learnedVendors:Vendor[]=[];
-  for(const observation of before.unresolved.filter(u=>u.type==='unknown_third_party').slice(0,2)){
+  const unknownObservations=before.unresolved.filter(u=>u.type==='unknown_third_party');
+  for(const [index,observation] of unknownObservations.entries()){
+    emit('learner','step',`Researching vendor ${index+1}/${unknownObservations.length}: ${observation.subject}`,undefined,job);
     try{
       const data=observation.data as {hosts:string[];urls:string[];phases:string[]};
-      const proposed=await proposeVendor(observation.subject,data,parent,job);
+      const proposed=await proposeVendor(observation.subject,data,candidate,job);
       // Limit the learned rule to hosts actually observed on the training site.
       proposed.domains=proposed.domains.filter(domain=>data.hosts.some(host=>host===domain||host.endsWith('.'+domain)));
       if(!proposed.domains.length||!proposed.sources.length)throw new Error('No observed domain or research provenance');
       candidate.vendors.push(proposed);learnedVendors.push(proposed);
       candidate.changelog.push(`Learned ${proposed.name} classification from ${trainingUrl}; not a new executable probe.`);
-    }catch(error){errors.push({stage:'vendor proposal',error:error instanceof Error?error.message:String(error)});}
+    }catch(error){errors.push({stage:'vendor proposal',domain:observation.subject,error:error instanceof Error?error.message:String(error)});}
+    await write('research-progress.json',{trainingUrl,parent:parent.version,attempted:index+1,total:unknownObservations.length,learnedVendors:learnedVendors.map(v=>({id:v.id,name:v.name,domains:v.domains})),errors});
   }
   const unmeasured=before.unresolved.filter(u=>u.type==='uninspected_store_badge');
   // Do not manufacture a missing capability or alter the real site to force a code-learning demo.
@@ -75,7 +91,7 @@ export async function learnOnRealSites(trainingUrl='https://zupapps.com/', holdo
   const candidateOnDisk=JSON.parse(await fs.readFile(path.join(dir,'candidate.json'),'utf8')) as BrainVersion;
   const unchanged=digest(candidateOnDisk)===fingerprint&&digest(candidate)===fingerprint;
   const modelCallsDuringTransfer=usage.calls-modelCallsBeforeTransfer;
-  const result={job,startedAt,completedAt:new Date().toISOString(),trainingUrl,from:parent.version,to:candidate.version,candidateFile:path.join(dir,'candidate.json'),parentFingerprint,fingerprint,frozenAt,unchanged,training:{unknownDomains:before.unresolved.filter(u=>u.type==='unknown_third_party').map(u=>u.subject),unmeasuredStoreLinks:unmeasured.length,probesBefore:parent.probes.length,probesAfter:candidate.probes.length},learnedVendors:learnedVendors.map(v=>({id:v.id,name:v.name,domains:v.domains,sources:v.sources,requiresConsent:v.requiresConsent})),policyJudgmentsValidated:false,newExecutableCheckerLearned,executableCheckerTransferProven:false,knowledgeTransferred:unchanged&&modelCallsDuringTransfer===0&&results.some(r=>r.knowledgeTransferred),modelCallsDuringTransfer,modelCallsDuringLearning:modelCallsBeforeTransfer,results,errors,promoted:false,scope:'Public real sites, no planted defects or ground-truth labels. Measures independently reproduced vendor recognition only; no accuracy, recall, or new executable checker claim. Consent and disclosure findings are not validated by this experiment.'};
+  const result={job,startedAt,completedAt:new Date().toISOString(),trainingUrl,from:parent.version,to:candidate.version,candidateFile:path.join(dir,'candidate.json'),parentFingerprint,fingerprint,frozenAt,unchanged,training:{unknownDomains:before.unresolved.filter(u=>u.type==='unknown_third_party').map(u=>u.subject),unmeasuredStoreLinks:unmeasured.length,probesBefore:parent.probes.length,probesAfter:candidate.probes.length},learnedVendors:learnedVendors.map(v=>({id:v.id,name:v.name,domains:v.domains,sources:v.sources,requiresConsent:v.requiresConsent})),policyJudgmentsValidated:false,newExecutableCheckerLearned,executableCheckerTransferProven:false,knowledgeTransferred:unchanged&&modelCallsDuringTransfer===0&&results.some(r=>r.knowledgeTransferred),modelCallsDuringTransfer,modelCallsDuringLearning:modelCallsBeforeTransfer-callsAtStart,results,errors,promoted:false,scope:'Public real sites, no planted defects or ground-truth labels. Measures independently reproduced vendor recognition only; no accuracy, recall, or new executable checker claim. Consent and disclosure findings are not validated by this experiment.'};
   await write('result.json',result);
   await fs.writeFile(path.join(config.dataDir,'real-learning-latest.json'),JSON.stringify(result,null,2));
   emit('learner','done',`Real experiment finished: ${learnedVendors.length} vendor rule(s), ${result.knowledgeTransferred?'recognition transferred':'recognition not proven to transfer'}, no new executable checker`,undefined,job);

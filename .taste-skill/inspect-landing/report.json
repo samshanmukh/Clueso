@@ -1,0 +1,2538 @@
+{
+ "url": "http://localhost:4300/",
+ "at": "2026-10-24T18:03:36.010Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.95,
+    0.5,
+    0.38,
+    0.43,
+    0.53,
+    0.36,
+    0.6,
+    0.36,
+    0.56
+   ],
+   "motion": {
+    "elements": 45,
+    "css": 4,
+    "transitions": 35,
+    "scripted": 6,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7570,
+     "screens": 8.4,
+     "words": 617,
+     "img": 5,
+     "video": 0,
+     "canvas": 6,
+     "svg": 1,
+     "sections": 9,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 5,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "qQuzR4AFn+BzMsEAAAAAAA=",
+      "OzzAAAAAAA",
+      "kAAAA=",
+      "68Mf4EJeT4ipjniaLr09lvEexQGcQopemQeebTDZqnZcT7kP",
+      "9xDNcx9pgAAAAAAAAAAAAAAAAAAAAAAAA="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "chars": 24,
+     "lines": 2,
+     "size": 80,
+     "vw": 5.6,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.035,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.5,
+     "top": 156,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "lines": 2,
+     "size": 80,
+     "font": "Albert Sans"
+    },
+    "headings": [
+     {
+      "text": "Looks ready. Loads more.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 80,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.5,
+      "top": 156,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Give it a website.",
+      "words": 4,
+      "chars": 18,
+      "lines": 1,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 1495,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Four passes, one report.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 2219,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Inspect what actually happens.",
+      "words": 4,
+      "chars": 30,
+      "lines": 2,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 2469,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Fired before consent.",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.24,
+      "top": 3193,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Missing from the policy.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.24,
+      "top": 3193,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Stretched badges.",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.24,
+      "top": 3193,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proof, or it stays a question.",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 3554,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sharper with every launch.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 4831,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six specialists, one brain.",
+      "words": 4,
+      "chars": 27,
+      "lines": 2,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 6219,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Built on NVIDIA Nemotron, Crusoe inference, You.com research and Playwright browsers.",
+      "words": 11,
+      "chars": 85,
+      "lines": 2,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Albert Sans",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.56,
+      "top": 6673,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Put Website to inspect under inspection.",
+      "words": 6,
+      "chars": 40,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.35,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 6950,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "See it on your site.",
+      "words": 5,
+      "chars": 20,
+      "lines": 1,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 7330,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      17,
+      18,
+      22,
+      28,
+      30,
+      32,
+      46,
+      52,
+      80
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 18,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.1
+     },
+     "measureChars": 53,
+     "max": {
+      "size": 80,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "text": "Looks ready. Loads more."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f3f3",
+       "top": 60,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 575,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#1f1f1f",
+       "top": 7258,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.12
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#626262",
+       "share": 0.74
+      },
+      {
+       "color": "#2c2c2c",
+       "share": 0.17
+      },
+      {
+       "color": "#f3f3f3",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      },
+      {
+       "color": "#f2f2f2",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1473e6",
+      "hsl": {
+       "h": 213,
+       "s": 0.84,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Open workspace",
+      "Inspect a website",
+      "See how it works"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.site-nav 1440px",
+      "section.hero 1440px",
+      "figure.hero-shot 1240px",
+      "div.footer-legal 1320px"
+     ],
+     "outlinedBoxes": 14,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 17,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 5,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 3142
+      },
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 6219
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.31
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7570,
+    "margins": {
+     "left": 60,
+     "right": 100
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 60,
+      "height": 1291,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Looks ready. Loads more.",
+       "size": 80,
+       "tag": "h1"
+      },
+      "left": 101,
+      "right": 101,
+      "textLeft": 362,
+      "textRight": 362,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#inspect.showcase",
+      "tag": "section",
+      "top": 1351,
+      "height": 724,
+      "words": 4,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Give it a website.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 989,
+      "textLeft": 100,
+      "textRight": 989,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how-it-works.how",
+      "tag": "section",
+      "top": 2075,
+      "height": 923,
+      "words": 79,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Four passes, one report.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 100,
+      "textLeft": 100,
+      "textRight": 186,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#checks.fields",
+      "tag": "section",
+      "top": 2998,
+      "height": 412,
+      "words": 98,
+      "media": 0,
+      "middle": 95,
+      "heading": {
+       "text": "Fired before consent.",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 129,
+      "right": 145,
+      "textLeft": 129,
+      "textRight": 145,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.proofs",
+      "tag": "section",
+      "top": 3410,
+      "height": 1276,
+      "words": 63,
+      "media": 2,
+      "middle": 41,
+      "heading": {
+       "text": "Proof, or it stays a question.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 100,
+      "textLeft": 100,
+      "textRight": 440,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#learning.learning",
+      "tag": "section",
+      "top": 4687,
+      "height": 1389,
+      "words": 100,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Sharper with every launch.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 125,
+      "textLeft": 100,
+      "textRight": 125,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.team",
+      "tag": "section",
+      "top": 6075,
+      "height": 454,
+      "words": 46,
+      "media": 0,
+      "middle": 235,
+      "heading": {
+       "text": "Six specialists, one brain.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 145,
+      "textLeft": 100,
+      "textRight": 145,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.names",
+      "tag": "section",
+      "top": 6529,
+      "height": 227,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Built on",
+       "size": 32,
+       "tag": "p"
+      },
+      "left": 332,
+      "right": 332,
+      "textLeft": 332,
+      "textRight": 332,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.closing",
+      "tag": "section",
+      "top": 6757,
+      "height": 501,
+      "words": 18,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Put",
+       "size": 52,
+       "tag": "h2"
+      },
+      "left": 149,
+      "right": 329,
+      "textLeft": 149,
+      "textRight": 358,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer",
+      "tag": "footer",
+      "top": 7258,
+      "height": 312,
+      "words": 35,
+      "media": 0,
+      "middle": 364,
+      "heading": {
+       "text": "See it on your site.",
+       "size": 46,
+       "tag": "h2"
+      },
+      "left": 60,
+      "right": 60,
+      "textLeft": 60,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Looks ready. Loads more.",
+      "size": 80,
+      "top": 156,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 100,
+      "n": 10
+     },
+     {
+      "x": 129,
+      "n": 2
+     },
+     {
+      "x": 548,
+      "n": 2
+     },
+     {
+      "x": 966,
+      "n": 2
+     },
+     {
+      "x": 149,
+      "n": 1
+     },
+     {
+      "x": 630,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 18,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.12,
+    "voidBox": {
+     "x": 0,
+     "y": 120,
+     "w": 360,
+     "h": 420
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.81,
+    0.3,
+    0.73,
+    0.72,
+    0.57,
+    0.48,
+    0.44,
+    0.63
+   ],
+   "motion": {
+    "elements": 45,
+    "css": 4,
+    "transitions": 35,
+    "scripted": 6,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 7465,
+     "screens": 7.3,
+     "words": 608,
+     "img": 5,
+     "video": 0,
+     "canvas": 6,
+     "svg": 1,
+     "sections": 9,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 5,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "qQuzR4AFn+BzMsEAAAAAAA=",
+      "OzzAAAAAAA",
+      "kAAAA=",
+      "68Mf4EJeT4ipjniaLr09lvEexQGcQopemQeebTDZqnZcT7kP",
+      "9xDNcx9pgAAAAAAAAAAAAAAAAAAAAAAAA="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "chars": 24,
+     "lines": 2,
+     "size": 59.4,
+     "vw": 7.7,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.035,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.69,
+     "top": 116,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "lines": 2,
+     "size": 59.4,
+     "font": "Albert Sans"
+    },
+    "headings": [
+     {
+      "text": "Looks ready. Loads more.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 59.4,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 116,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Give it a website.",
+      "words": 4,
+      "chars": 18,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1007,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Four passes, one report.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1750,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proof, or it stays a question.",
+      "words": 6,
+      "chars": 30,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 3453,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sharper with every launch.",
+      "words": 4,
+      "chars": 26,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 4765,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six specialists, one brain.",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 5990,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Built on NVIDIA Nemotron, Crusoe inference, You.com research and Playwright browsers.",
+      "words": 11,
+      "chars": 85,
+      "lines": 2,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Albert Sans",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 6558,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Put Website to inspect under inspection.",
+      "words": 6,
+      "chars": 40,
+      "lines": 2,
+      "size": 37.6,
+      "vw": 4.9,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.35,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 6753,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "See it on your site.",
+      "words": 5,
+      "chars": 20,
+      "lines": 1,
+      "size": 36.2,
+      "vw": 4.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 7075,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      17,
+      20,
+      25,
+      26,
+      36,
+      38,
+      59
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 16.9,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.1
+     },
+     "measureChars": 53,
+     "max": {
+      "size": 59.4,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "text": "Looks ready. Loads more."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f3f3",
+       "top": 60,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 459,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#1f1f1f",
+       "top": 7027,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.12
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#626262",
+       "share": 0.73
+      },
+      {
+       "color": "#2c2c2c",
+       "share": 0.17
+      },
+      {
+       "color": "#f3f3f3",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      },
+      {
+       "color": "#f2f2f2",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1473e6",
+      "hsl": {
+       "h": 213,
+       "s": 0.84,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Open workspace",
+      "Inspect a website",
+      "See how it works"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.site-nav 768px",
+      "section.hero 768px",
+      "figure.hero-shot 722px",
+      "div.footer-legal 722px"
+     ],
+     "outlinedBoxes": 14,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 15,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 5,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 6157
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.41
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 7465,
+    "margins": {
+     "left": 23,
+     "right": 23
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 60,
+      "height": 851,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Looks ready. Loads more.",
+       "size": 59,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 61,
+      "textRight": 61,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#inspect.showcase",
+      "tag": "section",
+      "top": 911,
+      "height": 743,
+      "words": 32,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Give it a website.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 66,
+      "textLeft": 23,
+      "textRight": 66,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how-it-works.how",
+      "tag": "section",
+      "top": 1654,
+      "height": 1022,
+      "words": 62,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Four passes, one report.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 23,
+      "textLeft": 23,
+      "textRight": 68,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#checks.fields",
+      "tag": "section",
+      "top": 2676,
+      "height": 680,
+      "words": 98,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Fired before consent.",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 52,
+      "right": 62,
+      "textLeft": 52,
+      "textRight": 62,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.proofs",
+      "tag": "section",
+      "top": 3357,
+      "height": 1313,
+      "words": 63,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Proof, or it stays a question.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 23,
+      "textLeft": 23,
+      "textRight": 290,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#learning.learning",
+      "tag": "section",
+      "top": 4669,
+      "height": 1225,
+      "words": 100,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Sharper with every launch.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 23,
+      "textLeft": 23,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.team",
+      "tag": "section",
+      "top": 5894,
+      "height": 568,
+      "words": 46,
+      "media": 0,
+      "middle": 91,
+      "heading": {
+       "text": "Six specialists, one brain.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 113,
+      "textLeft": 23,
+      "textRight": 113,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.names",
+      "tag": "section",
+      "top": 6462,
+      "height": 164,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Built on",
+       "size": 26,
+       "tag": "p"
+      },
+      "left": 69,
+      "right": 69,
+      "textLeft": 69,
+      "textRight": 69,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.closing",
+      "tag": "section",
+      "top": 6625,
+      "height": 402,
+      "words": 18,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Put",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 55,
+      "right": 242,
+      "textLeft": 55,
+      "textRight": 242,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer",
+      "tag": "footer",
+      "top": 7027,
+      "height": 438,
+      "words": 35,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "See it on your site.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 188,
+      "textLeft": 23,
+      "textRight": 188,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Looks ready. Loads more.",
+      "size": 59,
+      "top": 116,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 23,
+      "n": 10
+     },
+     {
+      "x": 52,
+      "n": 8
+     }
+    ],
+    "leftBlocks": 18,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.8,
+    0.39,
+    0.53,
+    0.71,
+    0.63,
+    0.39,
+    0.59,
+    0.44,
+    0.7
+   ],
+   "motion": {
+    "elements": 45,
+    "css": 4,
+    "transitions": 35,
+    "scripted": 6,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7253,
+     "screens": 8.6,
+     "words": 608,
+     "img": 5,
+     "video": 0,
+     "canvas": 6,
+     "svg": 1,
+     "sections": 9,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 5,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "qQuzR4AFn+BzMsEAAAAAAA=",
+      "OzzAAAAAAA",
+      "kAAAA=",
+      "68Mf4EJeT4ipjniaLr09lvEexQGcQopemQeebTDZqnZcT7kP",
+      "9xDNcx9pgAAAAAAAAAAAAAAAAAAAAAAAA="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "chars": 24,
+     "lines": 2,
+     "size": 44,
+     "vw": 11.3,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.035,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 112,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Looks ready. Loads more.",
+     "words": 4,
+     "lines": 2,
+     "size": 44,
+     "font": "Albert Sans"
+    },
+    "headings": [
+     {
+      "text": "Looks ready. Loads more.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 112,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Give it a website.",
+      "words": 4,
+      "chars": 18,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 775,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Four passes, one report.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1652,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Inspect what actually happens.",
+      "words": 4,
+      "chars": 30,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2160,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Fired before consent.",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2752,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Missing from the policy.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3014,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Stretched badges.",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3295,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proof, or it stays a question.",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 3568,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sharper with every launch.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4498,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six specialists, one brain.",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5587,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Built on NVIDIA Nemotron, Crusoe inference, You.com research and Playwright browsers.",
+      "words": 11,
+      "chars": 85,
+      "lines": 3,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Albert Sans",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6342,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Put Website to inspect under inspection.",
+      "words": 6,
+      "chars": 40,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.35,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 6553,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "See it on your site.",
+      "words": 5,
+      "chars": 20,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 6913,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      16,
+      17,
+      18,
+      22,
+      28,
+      30,
+      44
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 16.1,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.1
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 44,
+      "vw": 11.3,
+      "font": "Albert Sans",
+      "text": "Looks ready. Loads more."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f3f3",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 4751,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#1f1f1f",
+       "top": 6865,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.12
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#626262",
+       "share": 0.73
+      },
+      {
+       "color": "#2c2c2c",
+       "share": 0.17
+      },
+      {
+       "color": "#f3f3f3",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      },
+      {
+       "color": "#f2f2f2",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1473e6",
+      "hsl": {
+       "h": 213,
+       "s": 0.84,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Open workspace",
+      "Inspect a website",
+      "See how it works"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.site-nav 390px",
+      "section.hero 390px",
+      "figure.hero-shot 350px",
+      "div.footer-legal 350px"
+     ],
+     "outlinedBoxes": 14,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 17,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 5,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 977
+      },
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 2701
+      },
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 5769
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.23
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 7253,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 56,
+      "height": 605,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Looks ready. Loads more.",
+       "size": 44,
+       "tag": "h1"
+      },
+      "left": 21,
+      "right": 21,
+      "textLeft": 21,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#inspect.showcase",
+      "tag": "section",
+      "top": 661,
+      "height": 877,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 27,
+      "textLeft": 20,
+      "textRight": 27,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how-it-works.how",
+      "tag": "section",
+      "top": 1538,
+      "height": 1067,
+      "words": 75,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#checks.fields",
+      "tag": "section",
+      "top": 2605,
+      "height": 867,
+      "words": 96,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Fired before consent.",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 49,
+      "right": 50,
+      "textLeft": 49,
+      "textRight": 50,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.proofs",
+      "tag": "section",
+      "top": 3472,
+      "height": 930,
+      "words": 63,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Proof, or it stays a question.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#learning.learning",
+      "tag": "section",
+      "top": 4402,
+      "height": 1089,
+      "words": 100,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Sharper with every launch.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.team",
+      "tag": "section",
+      "top": 5491,
+      "height": 756,
+      "words": 46,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Six specialists, one brain.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 33,
+      "textLeft": 20,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.names",
+      "tag": "section",
+      "top": 6246,
+      "height": 182,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Built on",
+       "size": 22,
+       "tag": "p"
+      },
+      "left": 25,
+      "right": 26,
+      "textLeft": 25,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.closing",
+      "tag": "section",
+      "top": 6428,
+      "height": 436,
+      "words": 18,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Put",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 50,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer",
+      "tag": "footer",
+      "top": 6865,
+      "height": 388,
+      "words": 35,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "See it on your site.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 31,
+      "textLeft": 20,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Looks ready. Loads more.",
+      "size": 44,
+      "top": 112,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 8
+     },
+     {
+      "x": 49,
+      "n": 7
+     }
+    ],
+    "leftBlocks": 15,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "4 thin rule(s)/divider line(s): header.site-nav 1440px | section.hero 1440px | figure.hero-shot 1240px | div.footer-legal 1320px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "14 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 1440,
+   "message": "2 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (14, 17, 18, 22, 28, 30, 32, 46, 52, 80).",
+   "fix": "A page needs about five: display, heading, lead, body, small."
+  },
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 1440,
+   "message": "The running text is a soft grey on its ground (6.1:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The margins differ: 60px on the left, 100px on the right, at 1440px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/desktop-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/desktop-page-01.jpg",
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/desktop-page-02.jpg",
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/tablet-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/tablet-page-01.jpg",
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/mobile-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/mobile-page-01.jpg",
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-landing/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

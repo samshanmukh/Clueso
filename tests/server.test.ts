@@ -31,7 +31,12 @@ test('UI starts, API rejects invalid requests, and browser audit renders evidenc
     assert.equal(await (await fetch(`${base}/api/learn/checker/latest`)).json(),null);
     assert.equal((await fetch(`${base}/api/learn/checker`,{method:'POST'})).status,400);
     assert.equal(await (await fetch(`${base}/api/learn/real/latest`)).json(),null);
+    assert.equal((await fetch(`${base}/api/learn/checker`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url:'http://127.0.0.1/'})})).status,400);
     assert.equal((await fetch(`${base}/api/learn/real`,{method:'POST'})).status,400); // Never run live learning when inference is disabled.
+    const missingTarget=await fetch(`${base}/api/learn/real`,{method:'POST',headers:{'content-type':'application/json'},body:'{}'});
+    assert.equal(missingTarget.status,400);assert.match((await missingTarget.json()).error,/Choose a website/);
+    const privateTarget=await fetch(`${base}/api/learn/real`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url:'http://127.0.0.1/'})});
+    assert.equal(privateTarget.status,400);assert.match((await privateTarget.json()).error,/Private|non-public/);
 
     const post = (body: string, headers = {}) => fetch(`${base}/api/audit`, { method: 'POST', headers: { 'content-type': 'application/json', ...headers }, body });
     assert.equal((await post('{')).status, 400);
@@ -39,16 +44,18 @@ test('UI starts, API rejects invalid requests, and browser audit renders evidenc
     assert.equal((await post(JSON.stringify({ url: 'fixture:app-a', version: '../v0' }))).status, 400);
     assert.equal((await post('{}', { origin: 'https://untrusted.example' })).status, 403);
     assert.equal((await post(JSON.stringify({ url: 'fixture:../../secret' }))).status, 400);
+    assert.equal((await post(JSON.stringify({url:'fixture:app-a',candidateJob:'../unsafe'}))).status,400);
+    assert.equal((await post(JSON.stringify({url:'fixture:app-a',candidateJob:'real-absent',version:'v0'}))).status,400);
     browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
-    await page.goto(base);
+    await page.goto(base+'/app?url=');
     await page.waitForFunction(() => document.querySelector('#ver option[value="v0"]') !== null);
     await page.waitForFunction(() => document.querySelectorAll('.agent-card canvas').length === 6);
     await page.waitForFunction(() => document.documentElement.dataset.motion === 'framer');
     assert.equal(await page.locator('#pills').count(),0);
-    assert.equal(await page.locator('#url').inputValue(),'https://zupapps.com/');
+    assert.equal(await page.locator('#url').inputValue(),'');
     await page.locator('[data-example="https://mojo-app.com/"]').click();
     assert.equal(await page.locator('#url').inputValue(),'https://mojo-app.com/');
     await page.locator('[data-example="https://zupapps.com/"]').click();
@@ -128,10 +135,11 @@ test('UI starts, API rejects invalid requests, and browser audit renders evidenc
     await page.emulateMedia({reducedMotion:'reduce'});
     assert.equal(await page.locator('.team-heading .state-shimmer').evaluate(el=>getComputedStyle(el).animationName),'none');
     await page.waitForFunction(() => document.querySelector('#report')?.textContent?.includes('Meta Pixel'), { timeout: 60_000 });
-    await page.locator('[data-agent=scanner][data-state=sleeping]').waitFor();
+    await page.locator('[data-agent=scanner][data-state=completed]').waitFor();
+    await page.locator('.inspection-bot').waitFor({state:'detached'}); // Scanner may finish before the report and other roles.
     assert.equal(await page.locator('.inspection-bot').count(),0);
     assert.equal(await page.locator('.live-website-shot').count(),0);
-    assert.equal(await page.locator('[data-agent=learner]').getAttribute('data-state'),'idle');
+    assert.equal(await page.locator('[data-agent=learner]').getAttribute('data-state'),'skipped');
     const reportText = await page.locator('#report').innerText();
     assert.match(reportText, /Mixpanel/);
     assert.match(reportText, /Apple App Store/);
@@ -142,6 +150,10 @@ test('UI starts, API rejects invalid requests, and browser audit renders evidenc
     const report = JSON.parse(await fs.readFile(path.join(root, 'data/runs', runs[0], 'report.json'), 'utf8'));
     assert.equal(report.findings.length, 3);
     assert.equal(report.scan.stubbedThirdParties, true);
+    assert.deepEqual(report.roleWork.scanner,{completed:4,total:4,state:'completed',detail:'Page capture, probes, consent review and policy review finished.'});
+    assert.equal(report.roleWork.verifier.completed,report.roleWork.verifier.total);
+    assert.equal(report.roleWork.fixer.completed,report.findings.length);
+    assert.equal(report.roleWork.learner.state,'skipped');
     await page.locator('[data-finding]').filter({ hasText: 'Apple App Store' }).click();
     await page.waitForFunction(() => document.querySelector('#evidence')?.textContent?.includes('Measured by browser'));
     assert.match(await page.locator('#evidence').innerText(), /Painted dimensions/);
@@ -155,8 +167,9 @@ test('UI starts, API rejects invalid requests, and browser audit renders evidenc
     await page.locator('.finding-focus-box').waitFor();
     await page.locator('[data-finding]').filter({hasText:'Mixpanel'}).click();
     assert.equal(await page.locator('.finding-focus-box').count(),0);
-    assert.match(await page.locator('.preview-finding-note').innerText(),/Network evidence/);
-    assert.match(await page.locator('.preview-finding-note').innerText(),/no visible element/);
+    assert.equal(await page.locator('.preview-finding-note').count(),0);
+    assert.equal(await page.locator('#preview-stage .website-shot').isVisible(),true);
+    assert.match(await page.locator('#evidence').innerText(),/Mixpanel/);
     await page.locator('[data-finding]').filter({hasText:'Apple App Store'}).click();
 
     assert.ok(await page.locator('.marker').count() > 0);

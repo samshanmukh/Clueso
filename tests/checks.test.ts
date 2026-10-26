@@ -41,3 +41,16 @@ test('Cloudflare analytics is identified without inventing a consent violation, 
   assert.ok(result.findings[0].evidence.some((e) => e.summary.includes('does not establish a consent violation')));
   assert.deepEqual(runChecks({ ...snapshot, policy: { ...snapshot.policy, text: 'We use Cloudflare Web Analytics for performance metrics.' } }, known).findings, []);
 });
+
+
+test('brand layout measurements remain review leads with official provenance, never confirmed findings', () => {
+  const measured = asset({selector:'#badge',href:'https://apps.apple.com/app/example',drawnH:30});
+  const layout={selector:measured.selector,asset:measured,brand:'apple-app-store-badge',measuredHeight:30,minimumHeight:40,standardClearSpace:7.5,limitedClearSpace:3,nearestGap:2,neighbor:'Next label',spacingSupported:true,reasons:['Review measured size and spacing against the placement context.'],source:'https://developer.apple.com/app-store/marketing/guidelines/',status:'measured_review'};
+  const scan={host:'example.com',requests:[],policy:{url:null,text:''},consent:{found:false,clicked:false},assets:[],storeLinks:[],probeErrors:[],screenshots:{},layouts:[layout]} as unknown as ScanResult;
+  const result=runChecks(scan,brain);
+  assert.deepEqual(result.findings,[]);
+  assert.equal(result.unresolved.length,1);
+  assert.equal(result.unresolved[0].type,'brand_layout_review');
+  assert.equal((result.unresolved[0].data as typeof layout).source,layout.source);
+  assert.equal((result.unresolved[0].data as typeof layout).asset.selector,'#badge');
+});

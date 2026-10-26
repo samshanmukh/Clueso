@@ -7,12 +7,13 @@ import { BorderBeam } from 'border-beam';
 import { animate, motion, AnimatePresence, MotionConfig, useReducedMotion } from 'framer-motion';
 import { agentProgress } from './agent-progress.ts';
 import type { LearningEvidence } from './agent-progress.ts';
+import {siteRoleWork,workPercent,type SiteWork} from './site-progress.ts';
 
 type PreviewTarget = { selector: string; label: string; x: number; y: number; width: number; height: number };
 type InspectionPreview = { job: string | null; url: string; image: string | null; width: number; height: number; targets: PreviewTarget[] };
-type LabState = { id: string; state: 'starting'|'running'|'completed'|'error'; role: string|null; phase?: string; workedRoles: string[]; phases: string[]; site?: string; sites: string[]; eventCount: number; message: string };
+type LabState = { id: string; state: 'starting'|'running'|'completed'|'no-change'|'error'; role: string|null; phase?: string; workedRoles: string[]; phases: string[]; site?: string; sites: string[]; eventCount: number; message: string };
 type UIState = { busy: boolean; role: string | null; workedRoles?: string[]; message: string };
-declare global { interface Window { cluesoLab?: LabState | null; cluesoState?: UIState; cluesoLearning?: LearningEvidence | null; cluesoPreview?: InspectionPreview | null } }
+declare global { interface Window { cluesoLab?: LabState | null; cluesoState?: UIState; cluesoLearning?: LearningEvidence | null; cluesoSiteWork?:SiteWork|null; cluesoPreview?: InspectionPreview | null } }
 const initial: UIState = { busy: false, role: null, message: 'Ready for your next inspection' };
 function useActivity() {
   const [state, setState] = useState<UIState>(window.cluesoState ?? initial);
@@ -42,18 +43,28 @@ const agents: { role: string; name: string; task: string; avatar: BotAvatarType 
   { role: 'fixer', name: 'Patch', task: 'Writes fix prompts', avatar: 'ghost' },
   { role: 'learner', name: 'Nova', task: 'Learns new checks', avatar: 'hexagon' },
 ];
+function LandingTeam(){const state=useActivity();return <>{agents.map(agent=><article className="landing-agent" key={agent.role}><div><BotAvatar type={agent.avatar} state="default" size={48} shading="fabric" paused={state.paused} aria-hidden="true"/></div><strong>{agent.name}</strong><small>{agent.task}</small></article>)}</>;}
 function AgentRoster() {
   const state = useActivity();
-  const role = state.role === 'research' || state.role === 'gate' ? 'learner' : state.role;
-  return <><div className="team-heading"><span>YOUR INSPECTION TEAM</span><span className={state.busy ? 'state-shimmer' : ''}>{state.busy ? 'Working on this run' : 'Six specialists. One shared brain.'}</span></div><div className="agent-roster">{agents.map((a) => {
-    const working = state.busy && a.role === role;
-    const sleeping = !working && (state.workedRoles ?? []).includes(a.role);
-    const activity = working ? 'working' : sleeping ? 'sleeping' : 'idle';
-    return <motion.div key={a.role} initial={false} animate={{ y: working && !state.paused ? -3 : 0, scale: working && !state.paused ? 1.015 : 1 }} whileHover={state.paused ? undefined : { y: -3, scale: 1.015 }} transition={{ type: 'spring', stiffness: 310, damping: 25 }} className={'agent-card ' + activity} data-agent={a.role} data-state={activity}>
-      <div className="avatar-space"><BotAvatar type={a.avatar} state={working ? 'working' : sleeping ? 'sleeping' : 'default'} size={32} shading="fabric" paused={state.paused} aria-hidden="true" />{sleeping && <span className="sleep-label" aria-hidden="true">zᶻ</span>}</div>
-      <div><strong>{a.name}</strong><span>{a.task}</span></div><i className={'agent-status ' + activity} aria-label={working ? 'Working' : sleeping ? 'Sleeping after work' : 'Ready'} title={working ? 'Working' : sleeping ? 'Resting after completing work' : 'Waiting for a task'} />
+  const [site,setSite]=useState<SiteWork|null>(window.cluesoSiteWork??null);
+  useEffect(()=>{const update=(event:Event)=>setSite((event as CustomEvent<SiteWork|null>).detail);window.addEventListener('clueso:site-work',update);setSite(window.cluesoSiteWork??null);return()=>window.removeEventListener('clueso:site-work',update);},[]);
+  const work=siteRoleWork(site);
+  const siteLabel=(()=>{try{return new URL(site?.url??'').hostname;}catch{return site?.url??'Choose a site';}})();
+  return <><div className="team-heading"><h2>Inspection team</h2><span className={"team-site-progress"+(site?.running?" state-shimmer":"")}>{siteLabel} · Site work progress</span></div><div className="agent-roster">{agents.map((a) => {
+    const row=work[a.role as keyof typeof work],percent=workPercent(row);
+    const working=site?.running&&row.state==='running';
+    const done=row.state==='completed';
+    const activity=working?'working':done?'completed':row.state;
+    const caption=percent===null?(site?'Not needed':'No site'):row.state==='failed'?'Stopped':working?'In progress':row.state==='waiting'?'Waiting':`${row.completed}/${row.total} done`;
+    return <motion.div key={a.role} initial={false} animate={{ y: working && !state.paused ? -3 : 0 }} transition={{ type: 'spring', stiffness: 310, damping: 25 }} className={'agent-card site-agent-card ' + activity} data-agent={a.role} data-state={activity}>
+      <div className="avatar-space"><BotAvatar type={a.avatar} state={working?'working':'default'} size={32} shading="fabric" paused={state.paused} aria-hidden="true"/></div>
+      <div className="agent-card-copy"><strong>{a.name}</strong><span>{a.task}</span><small title={row.detail}>{caption}</small></div>
+      <div className="agent-score-ring" role="progressbar" aria-label={`${a.name}: site work progress. ${row.detail}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent??undefined} aria-valuetext={percent===null?caption:`${percent}%. ${row.completed} of ${row.total} work items. ${row.detail}`} title={row.detail}>
+        <div className="agent-ring-value" aria-hidden="true">{percent===null?'—':<>{percent}<small>%</small></>}</div>
+        <div className="agent-ring-track" aria-hidden="true"><div className="agent-ring-fill" style={{transform:`scaleX(${(percent??0)/100})`}}/></div>
+      </div>
     </motion.div>;
-  })}</div></>;
+  })}</div><p className="team-progress-note">Completed work for this site. 100% means the planned work finished; findings may still need review.</p></>;
 }
 function InspectionBot() {
   const state = useActivity();
@@ -110,6 +121,39 @@ function InspectionBot() {
     {preview.image && scanning && preview.targets.length ? <div className="inspection-component-count" aria-hidden="true">Captured components <b>{Math.min(index + 1, preview.targets.length)} / {preview.targets.length}</b></div> : null}
   </div>;
 }
+const liveSiteLabel=(value:string)=>{try{const url=new URL(value);return /localhost|127\.0\.0\.1/.test(url.hostname)?url.pathname:url.hostname;}catch{return value;}};
+function LiveExecutionSummary({run,theme,paused,resultMessage='Results are ready below'}:{run:LabState;theme:'dark'|'light';paused:boolean;resultMessage?:string}) {
+  const running=run.state==='starting'||run.state==='running';
+  const stopped=paused||!running;
+  const current=agents.find(agent=>agent.role===run.role);
+  const title=run.state==='no-change'?'No new checker needed':run.state==='completed'?'Run complete':run.state==='error'?'Run stopped':run.phase??'Connecting to the team';
+  return <>
+    <div className="learning-live-focus">
+      <div className="learning-live-orb" aria-hidden="true">{running ? <ThinkingOrb state={run.role === 'scanner' ? 'searching' : run.role === 'fixer' ? 'composing' : run.state === 'starting' ? 'connecting' : 'solving'} theme={theme} size={64} paused={stopped} /> : <span className={'learning-run-end ' + run.state}>{['completed','no-change'].includes(run.state) ? '✓' : '!'}</span>}</div>
+      <div className="learning-live-copy"><span className="live-state">{running ? 'Live' : 'Finished'}</span><AnimatePresence mode="wait" initial={false}><motion.h4 key={title} initial={{ opacity: 0, y: paused ? 0 : 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: paused ? 0 : .18 }}>{title}</motion.h4></AnimatePresence><p>{current && running ? `${current.name} is working` : running ? 'Waiting for the next agent event' : run.state === 'no-change' ? 'Existing inspection tools are unchanged' : run.state === 'completed' ? resultMessage : 'See the error message above'}</p>{run.site && <span className="learning-live-site">{liveSiteLabel(run.site)}</span>}</div>
+      <div className="learning-live-count"><strong>{run.eventCount}</strong><span>live updates</span></div>
+    </div>
+    <div className="learning-work-sweep" aria-hidden="true"><i /></div>
+  </>;
+}
+function InspectionLiveStage(){
+  const activity=useActivity();
+  const [site,setSite]=useState<SiteWork|null>(window.cluesoSiteWork??null);
+  const [lab,setLab]=useState<LabState|null>(window.cluesoLab??null);
+  const [visible,setVisible]=useState(!document.getElementById('view-inspection')?.hidden);
+  useEffect(()=>{
+    const onSite=(event:Event)=>setSite((event as CustomEvent<SiteWork|null>).detail);
+    const onLab=(event:Event)=>setLab((event as CustomEvent<LabState|null>).detail);
+    const onView=()=>setVisible(!document.getElementById('view-inspection')?.hidden);
+    window.addEventListener('clueso:site-work',onSite);window.addEventListener('clueso:lab-state',onLab);window.addEventListener('clueso:view',onView);
+    setSite(window.cluesoSiteWork??null);setLab(window.cluesoLab??null);
+    return()=>{window.removeEventListener('clueso:site-work',onSite);window.removeEventListener('clueso:lab-state',onLab);window.removeEventListener('clueso:view',onView);};
+  },[]);
+  const phases:Record<string,string>={scanner:'Inspecting the website',vision:'Comparing visual evidence',investigator:'Investigating findings',verifier:'Verifying evidence',fixer:'Preparing fix prompts',learner:'Learning from evidence'};
+  const run:LabState|null=site?.running?{id:site.job??'inspection',state:'running',role:site.activeRole??null,phase:phases[site.activeRole??'']??'Connecting to the team',workedRoles:[],phases:[],sites:[site.url],site:site.url,eventCount:site.eventCount??0,message:site.message??''}:lab&&['starting','running'].includes(lab.state)?lab:null;
+  if(!run)return null;
+  return <div className="inspection-live-panel learning-live-stage" data-run-state={run.state} data-motion-paused={String(activity.paused||!visible)}><LiveExecutionSummary run={run} theme={activity.theme} paused={activity.paused||!visible}/></div>;
+}
 function LearningLiveStage() {
   const activity = useActivity();
   const [run, setRun] = useState<LabState | null>(window.cluesoLab ?? null);
@@ -125,16 +169,8 @@ function LearningLiveStage() {
   if (!run) return null;
   const running = run.state === 'starting' || run.state === 'running';
   const stopped = activity.paused || !running || !visible;
-  const current = agents.find(agent => agent.role === run.role);
-  const title = run.state === 'completed' ? 'Run complete' : run.state === 'error' ? 'Run stopped' : run.phase ?? 'Connecting to the team';
-  const siteLabel = (value: string) => { try { const url = new URL(value); return /localhost|127\.0\.0\.1/.test(url.hostname) ? url.pathname : url.hostname; } catch { return value; } };
   return <div className="learning-live-stage" data-run-state={run.state} data-motion-paused={String(stopped)}>
-    <div className="learning-live-focus">
-      <div className="learning-live-orb" aria-hidden="true">{running ? <ThinkingOrb state={run.role === 'scanner' ? 'searching' : run.role === 'fixer' ? 'composing' : run.state === 'starting' ? 'connecting' : 'solving'} theme={activity.theme} size={64} paused={stopped} /> : <span className={'learning-run-end ' + run.state}>{run.state === 'completed' ? '✓' : '!'}</span>}</div>
-      <div className="learning-live-copy"><span className="eyebrow">{running ? 'LIVE EXECUTION' : 'EXECUTION FINISHED'}</span><AnimatePresence mode="wait" initial={false}><motion.h4 key={title} initial={{ opacity: 0, y: activity.paused ? 0 : 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: activity.paused ? 0 : .18 }}>{title}</motion.h4></AnimatePresence><p>{current && running ? `${current.name} is working` : running ? 'Waiting for the next agent event' : run.state === 'completed' ? 'Results are ready below' : 'See the error message above'}</p>{run.site && <span className="learning-live-site">↗ {siteLabel(run.site)}</span>}</div>
-      <div className="learning-live-count"><strong>{run.eventCount}</strong><span>live updates</span></div>
-    </div>
-    <div className="learning-work-sweep" aria-hidden="true"><i /></div>
+    <LiveExecutionSummary run={run} theme={activity.theme} paused={activity.paused||!visible}/>
     <div className="learning-live-agents">{agents.map(agent => {
       const working = running && run.role === agent.role;
       const participated = run.workedRoles.includes(agent.role);
@@ -143,7 +179,7 @@ function LearningLiveStage() {
       </motion.div>;
     })}</div>
     {run.phases.length > 0 && <div className="learning-observed-phases" aria-label="Observed work phases">{run.phases.map(phase => <span className={running && phase === run.phase ? 'active' : ''} key={phase}>{phase}</span>)}</div>}
-    {run.sites.length > 1 && <p className="learning-observed-sites">Observed sites: {run.sites.map(siteLabel).join(' · ')}</p>}
+    {run.sites.length > 1 && <p className="learning-observed-sites">Observed sites: {run.sites.map(liveSiteLabel).join(' · ')}</p>}
   </div>;
 }
 
@@ -157,7 +193,7 @@ function AgentProgress() {
     return () => window.removeEventListener('clueso:learning', onLearning);
   }, []);
   return <section className="lab-card agent-progress-panel" aria-labelledby="agent-progress-title">
-    <div className="lab-card-heading"><div><span className="eyebrow">THE TEAM, BY ROLE</span><h3 id="agent-progress-title">Saved role evidence</h3></div><span className="lab-badge">{evidence ? `${evidence.from} → ${evidence.to} · ${evidence.promoted ? 'Promoted' : 'Candidate'}` : 'Awaiting evidence'}</span></div>
+    <div className="lab-card-heading"><div><h3 id="agent-progress-title">Saved role evidence</h3></div><span className="lab-badge">{evidence ? `${evidence.from} → ${evidence.to} · ${evidence.promoted ? 'Promoted' : 'Candidate'}` : 'Awaiting evidence'}</span></div>
     <p className="agent-progress-intro">{evidence ? 'Latest completed real-site run. Each bar has its own unit; these are not comparable skill scores.' : 'Your next real-site learning cycle will show what changed for each role.'}</p>
     <div className="agent-progress-grid">{agentProgress(evidence).map(row => {
       const agent = agents.find(a => a.role === row.role)!;
@@ -182,7 +218,7 @@ function InputBeam() {
   const s = useActivity();
   const [focused,setFocused]=useState(false);
   useEffect(()=>{const form=document.getElementById('audit-form');if(!form)return;const sync=()=>setFocused(form.contains(document.activeElement));form.addEventListener('focusin',sync);form.addEventListener('focusout',sync);return()=>{form.removeEventListener('focusin',sync);form.removeEventListener('focusout',sync);};},[]);
-  return <BorderBeam size="md" staticColors colorVariant={s.theme === 'dark' ? 'forest' : 'ocean'} theme={s.theme} active={!s.paused} strength={s.busy || focused ? 1 : 0.85} brightness={s.theme === 'dark' ? 1.9 : 1.35} saturation={1.35} glowSize={1.3} duration={3.8} borderRadius={14} data-beam-state={s.busy ? 'working' : focused ? 'focused' : 'idle'} style={{ width: '100%', height: '100%' }}><div style={{ width: '100%', height: '100%', borderRadius: 12 }} /></BorderBeam>;
+  return <BorderBeam size="md" staticColors colorVariant="forest" theme={s.theme} active={!s.paused} strength={s.busy || focused ? 1 : 0.85} brightness={s.theme === 'dark' ? 1.3 : 1} saturation={0.8} glowSize={0.8} duration={4.2} borderRadius={8} data-beam-state={s.busy ? 'working' : focused ? 'focused' : 'idle'} style={{ width: '100%', height: '100%' }}><div style={{ width: '100%', height: '100%', borderRadius: 12 }} /></BorderBeam>;
 }
 
 /** Motion's DOM API bridges the existing evidence renderer without replacing its state. */
@@ -257,6 +293,6 @@ function WorkspaceMotion() {
   },[]);
   return null;
 }
-for (const [id, component] of [['agent-roster-root', <AgentRoster />], ['preview-bot-root', <InspectionBot />], ['agent-progress-root', <AgentProgress />], ['lab-live-root', <LearningLiveStage />], ['busy-orb-root', <BusyIndicator />], ['input-beam-root', <InputBeam />], ['motion-root', <WorkspaceMotion />]] as const) {
+for (const [id, component] of [['landing-team-root', <LandingTeam />], ['agent-roster-root', <AgentRoster />], ['preview-bot-root', <InspectionBot />], ['agent-progress-root', <AgentProgress />], ['lab-live-root', <LearningLiveStage />], ['inspection-live-root', <InspectionLiveStage />], ['busy-orb-root', <BusyIndicator />], ['input-beam-root', <InputBeam />], ['motion-root', <WorkspaceMotion />]] as const) {
   const el = document.getElementById(id); if (el) createRoot(el).render(<MotionConfig reducedMotion="user">{component}</MotionConfig>);
 }

@@ -107,3 +107,13 @@ test('investigator cannot propose pre-consent tracking for context-dependent ana
     assert.equal(calls, 2);
   } finally { globalThis.fetch = original; }
 });
+
+test('investigator summaries cannot clear an audit that still has unresolved evidence',async()=>{
+ const {reviewAwareSummary}=await import('../src/agents/investigator.ts');
+ const unresolved=[{id:'unknown',type:'unknown_third_party',subject:'unknown.example',summary:'Unknown service',data:{}}] as any;
+ for(const summary of ['No further action required.','No action is needed.','The site is fully compliant.']){
+  const result=reviewAwareSummary(summary,unresolved);assert.match(result,/1 observations remain unresolved/);assert.match(result,/No overall clearance/);assert.notEqual(result,summary);
+ }
+ assert.equal(reviewAwareSummary('Research the unknown service before a conclusion.',unresolved),'Research the unknown service before a conclusion.');
+ assert.equal(reviewAwareSummary('No further action required.',[]),'No further action required.');
+});

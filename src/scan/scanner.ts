@@ -5,6 +5,7 @@ import type { BrainVersion, Probe } from '../brain/store.ts';
 import { emit } from '../events.ts';
 import { measureBrandLayout, type LayoutAssessment } from '../checks/brand-layout.ts';
 import { validatePublicUrl } from '../tools/network.ts';
+import {runStoreLinkClassifier,type StoreLinkObservation} from '../checks/text-links.ts';
 
 export interface NetRequest { id: string; url: string; host: string; phase: 'pre' | 'post'; type: string; t: number }
 export interface AssetInstance {
@@ -21,6 +22,7 @@ export interface ScanResult {
   policy: { url: string | null; text: string | null };
   assets: AssetInstance[]; probeErrors: { probe: string; error: string }[];
   storeLinks: StoreLink[];
+  storeLinkObservations?:StoreLinkObservation[];
   layouts?: LayoutAssessment[];
   screenshots: { pre?: string; post?: string };
   stubbedThirdParties: boolean;
@@ -221,6 +223,7 @@ export async function scan(url: string, brain: BrainVersion, artifactsDir: strin
   const shots: ScanResult['screenshots'] = {};
   shots.pre = 'pre.png'; await page.screenshot({ path: path.join(artifactsDir, shots.pre) });
   await publishPreview(page, url, shots.pre, job).catch(() => {});
+  emit('scanner','step','Page capture saved',{workProgress:{url,completed:1,total:4,state:'running',detail:'Page capture saved.'}},job);
 
   // Capture/decode store artwork before measuring it. Lazy-loaded images may still
   // have naturalWidth=0 immediately after DOM readiness.
@@ -256,11 +259,12 @@ export async function scan(url: string, brain: BrainVersion, artifactsDir: strin
   }
 
   // Inspection probes (registry snapshot pinned to this brain version)
-  const assets: AssetInstance[] = []; const probeErrors: ScanResult['probeErrors'] = [];
+  const assets: AssetInstance[] = []; const probeErrors: ScanResult['probeErrors'] = [];const storeLinkObservations:StoreLinkObservation[]=[];
   for (const p of brain.probes) {
-    try { const a = await runProbe(page, p); assets.push(...a); emit('scanner', 'step', `Probe ${p.id}: ${a.length} asset instance(s)`, undefined, job); }
+    try { if(p.kind==='store-link-classifier'){const observations=await runStoreLinkClassifier(page,p);storeLinkObservations.push(...observations);emit('scanner','step',`Probe ${p.id}: ${observations.filter(o=>o.verified).length} verified text-only store link(s)`,undefined,job);}else{const a = await runProbe(page, p); assets.push(...a); emit('scanner', 'step', `Probe ${p.id}: ${a.length} asset instance(s)`, undefined, job);} }
     catch (e: any) { probeErrors.push({ probe: p.id, error: String(e?.message ?? e) }); emit('scanner', 'warn', `Probe ${p.id} failed: ${e?.message ?? e}`, undefined, job); }
   }
+  emit('scanner','step','Inspection probes finished',{workProgress:{url,completed:2,total:4,state:'running',detail:'Page capture and inspection probes finished.'}},job);
   // Element screenshots of measured assets that sit inside store links (evidence crops)
   for (const a of assets.filter((a) => a.href).slice(0, 8)) {
     try {
@@ -304,6 +308,7 @@ export async function scan(url: string, brain: BrainVersion, artifactsDir: strin
     emit('scanner', 'step', 'No consent control found', undefined, job);
   }
 
+  emit('scanner','step','Consent review finished',{workProgress:{url,completed:3,total:4,state:'running',detail:'Capture, probes and consent review finished.'}},job);
   // Privacy policy text
   const policy: ScanResult['policy'] = { url: null, text: null };
   const policyHref = await page.evaluate(() => {
@@ -319,7 +324,7 @@ export async function scan(url: string, brain: BrainVersion, artifactsDir: strin
   emit('scanner', 'step', `Captured ${requests.length} requests, ${assets.length} assets, ${storeLinks.length} store link(s), policy ${policy.url ? 'found' : 'missing'}`, undefined, job);
 
   const result: ScanResult = { url, host: new URL(url).host, startedAt: new Date(t0).toISOString(), ms: Date.now() - t0, artifactsDir,
-    requests, consent, policy, assets, probeErrors, storeLinks, layouts, screenshots: shots, stubbedThirdParties: stubbed };
+    requests, consent, policy, assets, probeErrors, storeLinks, storeLinkObservations, layouts, screenshots: shots, stubbedThirdParties: stubbed };
   fs.writeFileSync(path.join(artifactsDir, 'scan.json'), JSON.stringify(result, null, 2));
   return result;
   } finally { await ctx.close(); }

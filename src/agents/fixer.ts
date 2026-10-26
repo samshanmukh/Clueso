@@ -44,16 +44,25 @@ Acceptance checks:
 ${accept([`The policy text contains "${v?.name}"`, 'No other policy sections were removed or reworded'])}
 
 Note: this flags a disclosure gap with evidence; it is not legal advice.`;
-    case 'missing_privacy_policy':
+    case 'missing_privacy_policy': {
+      const services = f.evidence.filter((e) => e.kind === 'service').map((e) => e.data as { name: string; recognized: boolean; category?: string; collects?: string[]; requestCount: number; beforeConsent: number });
+      const lines = services.map((s) => `- ${s.name}${s.recognized ? ` (${s.category}; collects ${s.collects?.join(', ')})` : ' (unrecognized: identify the service and what it collects before describing it)'}: ${s.requestCount} request(s)${s.beforeConsent ? `, ${s.beforeConsent} before consent` : ''}`).join('\n');
+      const named = services.map((s) => s.name);
       return `Fix: the site loads third-party services but has no reachable privacy policy.
 
-Evidence:
+Evidence (Clueso audit):
 ${ev}
 
-Change: add a /privacy page linked from the footer of every page, listing each third-party service the site loads and what it collects.
+Services the policy must disclose:
+${lines || '- (no third-party services were recorded)'}
+
+Change: add a /privacy page linked from the footer of every page. Name each service above, say what it collects and why the site uses it. Confirm the unrecognized domains with whoever owns the integration before describing them.
 
 Acceptance checks:
-${accept(['A footer link containing "Privacy" opens the policy', 'Every third-party service on the site is named in it'])}`;
+${accept(['A footer link containing "Privacy" opens the policy', ...named.map((n) => `The policy names ${n}`)])}
+
+Note: this flags a disclosure gap with evidence; it is not legal advice.`;
+    }
     case 'badge_misuse': {
       const a = f.evidence.find((e) => e.kind === 'asset')?.data as AssetInstance | undefined;
       const official = f.evidence.find((e) => e.kind === 'verification' && (e.data as any)?.provenance === 'linked_from_official_page')?.data as { pageUrl: string; assetUrl: string; referenceKind: string } | undefined;

@@ -5,14 +5,14 @@ import type { AssetInstance, ScanResult, StoreLink } from '../scan/scanner.ts';
 export type FindingType = 'pre_consent_tracking' | 'undisclosed_vendor' | 'missing_privacy_policy' | 'badge_misuse';
 export type Status = 'candidate' | 'confirmed' | 'rejected' | 'unresolved';
 
-export interface Evidence { kind: 'request' | 'policy' | 'asset' | 'consent' | 'screenshot' | 'verification' | 'note'; summary: string; data?: unknown; file?: string }
+export interface Evidence { kind: 'request' | 'policy' | 'asset' | 'consent' | 'screenshot' | 'verification' | 'note' | 'service'; summary: string; data?: unknown; file?: string }
 export interface Finding {
   id: string; key: string; type: FindingType; subject: string; subjectName: string; title: string; severity: 'high' | 'medium' | 'low';
   status: Status; source: 'check' | 'investigator'; evidence: Evidence[]; rationale: string;
   verification?: { status: Status; method: string; notes: string[] };
   repairPrompt?: string; repairStatus: 'untested';
 }
-export interface Unresolved { id: string; type: 'unknown_third_party' | 'uninspected_store_badge' | 'probe_error' | 'no_consent_control' | 'visual_review' | 'brand_layout_review'; subject: string; summary: string; data: unknown }
+export interface Unresolved { id: string; type: 'unknown_third_party' | 'uninspected_store_badge' | 'probe_error' | 'no_consent_control' | 'visual_review' | 'brand_layout_review' | 'vendor_rule_review'; subject: string; summary: string; data: unknown }
 
 export function registrable(host: string) {
   const h = host.replace(/:\d+$/, '');
@@ -33,6 +33,12 @@ export function isQrAsset(a: AssetInstance): boolean {
 export function assetsForStoreLink(link: StoreLink, assets: AssetInstance[]): AssetInstance[] {
   return assets.filter((a) => typeof a.selector === 'string' && (a.selector === link.selector || a.selector.startsWith(`${link.selector} > `)));
 }
+/** Shared coverage rule used by audits and paired transfer observations. */
+export function uninspectedStoreLinks(links:StoreLink[],assets:AssetInstance[],brain:BrainVersion,observations:import('./text-links.ts').StoreLinkObservation[]=[]){
+ const covered=new Set(assets.filter(a=>brandForAsset(a,brain)).map(a=>a.href));
+ return links.filter(link=>{const matched=assetsForStoreLink(link,assets);if(matched.length&&matched.every(isQrAsset))return false;if(covered.has(link.href))return false;if(link.text&&link.width*link.height<1500)return false;if(observations.some(o=>o.verified&&o.kind==='text-only'&&o.selector===link.selector&&o.href===link.href))return false;return true;});
+}
+
 
 export function brandForAsset(a: AssetInstance, brain: BrainVersion): BrandRule | null {
   if (isQrAsset(a)) return null;
@@ -62,6 +68,36 @@ export function measureAsset(a: AssetInstance, b: BrandRule) {
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+type ThirdPartyRequest = ScanResult['requests'][number];
+const phaseLabel = (r: ThirdPartyRequest) => r.phase === 'pre' ? 'before consent' : 'after consent';
+const requestEvidence = (r: ThirdPartyRequest) => ({ summary: `[${phaseLabel(r)}] ${r.type} ${r.url.slice(0, 140)}`, type: r.type, url: r.url, phase: r.phase, host: r.host });
+const timing = (rs: ThirdPartyRequest[]) => ({ beforeConsent: rs.filter((r) => r.phase === 'pre').length, afterConsent: rs.filter((r) => r.phase === 'post').length });
+
+/** Human-readable list of the services behind third-party traffic, recognized vendors first. */
+export function serviceList(byVendor: Map<string, { v: Vendor; reqs: ThirdPartyRequest[] }>, unknown: Map<string, ThirdPartyRequest[]>): string {
+  const names = [...[...byVendor.values()].map(({ v }) => v.name), ...[...unknown.keys()].map((d) => `${d} (unrecognized)`)];
+  return names.length <= 1 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+}
+
+/** Evidence naming every third party that loaded: one summary note, then one item per vendor or unrecognized domain. */
+export function thirdPartyServiceEvidence(byVendor: Map<string, { v: Vendor; reqs: ThirdPartyRequest[] }>, unknown: Map<string, ThirdPartyRequest[]>): Evidence[] {
+  const total = [...byVendor.values()].reduce((n, e) => n + e.reqs.length, 0) + [...unknown.values()].reduce((n, rs) => n + rs.length, 0);
+  const services = byVendor.size + unknown.size;
+  const names = [...[...byVendor.values()].map(({ v }) => v.name), ...[...unknown.keys()].map((d) => `${d} (unrecognized)`)];
+  const summary: Evidence = { kind: 'note', summary: `${total} third-party request${total === 1 ? '' : 's'} to ${services} service${services === 1 ? '' : 's'}: ${names.join(', ')}. No privacy policy link was found or it could not be read.`, data: { requestCount: total, serviceCount: services, services: names } };
+  const vendors: Evidence[] = [...byVendor.values()].map(({ v, reqs }) => {
+    const t = timing(reqs);
+    return { kind: 'service', summary: `${v.name} (${v.category}): ${reqs.length} request${reqs.length === 1 ? '' : 's'}${t.beforeConsent ? `, ${t.beforeConsent} before consent` : ', none before consent'}. Collects ${v.collects.join(', ')}.`,
+      data: { recognized: true, vendorId: v.id, name: v.name, category: v.category, collects: v.collects, requestCount: reqs.length, ...timing(reqs), firedBeforeConsent: t.beforeConsent > 0, hosts: [...new Set(reqs.map((r) => r.host))], requests: reqs.slice(0, 8).map(requestEvidence) } };
+  });
+  const domains: Evidence[] = [...unknown].map(([dom, reqs]) => {
+    const t = timing(reqs);
+    return { kind: 'service', summary: `${dom} (unrecognized): ${reqs.length} request${reqs.length === 1 ? '' : 's'}${t.beforeConsent ? `, ${t.beforeConsent} before consent` : ', none before consent'}. The vendor is not in the shared brain, so what it collects is unknown.`,
+      data: { recognized: false, name: dom, requestCount: reqs.length, ...t, firedBeforeConsent: t.beforeConsent > 0, hosts: [...new Set(reqs.map((r) => r.host))], urls: reqs.slice(0, 5).map((r) => r.url), requests: reqs.slice(0, 8).map(requestEvidence) } };
+  });
+  return [summary, ...vendors, ...domains];
+}
+
 export function runChecks(scan: ScanResult, brain: BrainVersion): { findings: Finding[]; unresolved: Unresolved[] } {
   const findings: Finding[] = []; const unresolved: Unresolved[] = [];
   const first = registrable(scan.host);
@@ -78,9 +114,8 @@ export function runChecks(scan: ScanResult, brain: BrainVersion): { findings: Fi
 
   const policy = (scan.policy.text ?? '').toLowerCase();
   if (third.length && !scan.policy.text) {
-    findings.push(mk('missing_privacy_policy', 'site', 'Site', 'No privacy policy found while third parties are loaded', 'high', [
-      { kind: 'note', summary: `${third.length} third-party requests; no link containing "privacy" was found or it could not be read` },
-    ], 'Third-party data collection without any reachable privacy policy.'));
+    findings.push(mk('missing_privacy_policy', 'site', 'Site', 'No privacy policy found while third parties are loaded', 'high', thirdPartyServiceEvidence(byVendor, unknown),
+      `Third-party data collection without any reachable privacy policy. The site loads ${serviceList(byVendor, unknown)}, and none of them is disclosed to visitors.`));
   }
 
   for (const { v, reqs } of byVendor.values()) {
@@ -109,14 +144,12 @@ export function runChecks(scan: ScanResult, brain: BrainVersion): { findings: Fi
   for (const [dom, reqs] of unknown) {
     unresolved.push({ id: `u-${slug(dom)}`, type: 'unknown_third_party', subject: dom,
       summary: `${reqs.length} request(s) to ${dom} (${[...new Set(reqs.map((r) => r.host))].join(', ')}) — vendor not in the shared brain${reqs.some((r) => r.phase === 'pre') ? '; fired before consent' : ''}`,
-      data: { hosts: [...new Set(reqs.map((r) => r.host))], urls: reqs.slice(0, 5).map((r) => r.url), phases: [...new Set(reqs.map((r) => r.phase))] } });
+      data: { requestCount:reqs.length, beforeConsent:reqs.filter(r=>r.phase==='pre').length, afterConsent:reqs.filter(r=>r.phase==='post').length, hosts: [...new Set(reqs.map((r) => r.host))], urls: reqs.slice(0, 5).map((r) => r.url), phases: [...new Set(reqs.map((r) => r.phase))] } });
   }
 
   // Brand assets
-  const coveredLinks = new Set<string>();
   for (const a of scan.assets) {
     const b = brandForAsset(a, brain); if (!b) continue;
-    if (a.href) coveredLinks.add(a.href);
     const m = measureAsset(a, b);
     if (!m.problems.length) continue;
     findings.push(mk('badge_misuse', b.id, b.name, `${b.name} artwork is altered (${m.problems.length} problem${m.problems.length > 1 ? 's' : ''})`, 'medium', [
@@ -125,11 +158,7 @@ export function runChecks(scan: ScanResult, brain: BrainVersion): { findings: Fi
       { kind: 'note', summary: b.guidance, data: b.sources },
     ], m.problems.join('; ')));
   }
-  for (const l of scan.storeLinks) {
-    const linkedAssets = assetsForStoreLink(l, scan.assets);
-    if (linkedAssets.length && linkedAssets.every(isQrAsset)) continue;
-    if (coveredLinks.has(l.href)) continue;
-    if (l.text && l.width * l.height < 1500) continue; // a plain text link, not a badge
+  for (const l of uninspectedStoreLinks(scan.storeLinks,scan.assets,brain,scan.storeLinkObservations)) {
     unresolved.push({ id: `s-${slug(l.selector)}`, type: 'uninspected_store_badge', subject: l.host,
       summary: `Store link ${l.selector} (${l.width.toFixed(0)}×${l.height.toFixed(0)}) shows something, but no probe could measure its artwork`, data: l satisfies StoreLink });
   }
@@ -137,7 +166,7 @@ export function runChecks(scan: ScanResult, brain: BrainVersion): { findings: Fi
   if (!scan.consent.found && third.some((r) => classifyHost(r.host, brain)?.requiresConsent))
     unresolved.push({ id: 'no-consent', type: 'no_consent_control', subject: 'consent', summary: 'Consent-requiring vendors present but no consent control found', data: null });
 
-  for(const layout of scan.layouts??[])if(layout.status==='measured_review')unresolved.push({id:`layout-${slug(layout.selector)}`,type:'brand_layout_review',subject:layout.brand,summary:`App Store badge size / spacing needs review: ${layout.reasons.join(' ')}`,data:layout});
+  for(const layout of scan.layouts??[])if(layout.status==='measured_review')unresolved.push({id:`layout-${slug(layout.selector)}`,type:'brand_layout_review',subject:layout.brand,summary:`App Store badge ${layout.measuredHeight<layout.minimumHeight-.5?'size and spacing':'clear space'} needs review`,data:layout});
   return { findings: dedupe(findings), unresolved };
 }
 

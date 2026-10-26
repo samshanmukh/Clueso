@@ -229,8 +229,10 @@ export function parseProbeReply(text: string): { id: string; name: string; descr
   const meta = extractJson<any>(text.replace(/```[\s\S]*?```/g, '')) ?? {};
   const returned = (fence?.[1] ?? (typeof meta.code === 'string' ? meta.code : '')).trim();
   // Models sometimes return a zero-argument function envelope instead of its body.
-  const envelope = returned.match(/^(?:async\s+)?function(?:\s+[a-zA-Z_$][\w$]*)?\s*\(\s*\)\s*\{([\s\S]*)\}\s*;?$/);
-  const code = (envelope?.[1] ?? returned).trim();
+  const envelope = returned.match(/^(?:async\s+)?function(?:\s+[a-zA-Z_$][\w$]*)?\s*\(\s*(?:document)?\s*\)\s*\{([\s\S]*)\}\s*;?$/);
+  const iife=/^\(\s*(?:async\s+)?\(\s*\)\s*=>\s*\{[\s\S]*\}\s*\)\s*\(\s*\)\s*;?$/.test(returned);
+  const arrow=returned.match(/^(?:async\s+)?\(\s*(?:document)?\s*\)\s*=>\s*\{([\s\S]*)\}\s*;?$/);
+  const code = (envelope?.[1] ?? arrow?.[1] ?? (iife?'return '+returned:returned)).trim();
   if (!code || !/\breturn\b/.test(code)) return null;
   return { id: String(meta.id ?? 'learned-probe'), name: String(meta.name ?? 'Learned probe'), description: String(meta.description ?? ''), code };
 }

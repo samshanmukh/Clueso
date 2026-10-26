@@ -1,0 +1,329 @@
+{
+  "version": "v4",
+  "parent": "v3",
+  "createdAt": "2026-10-18T01:11:52.287Z",
+  "changelog": [
+    "Agent-generated text-only store-link classifier learned from https://avocation.app/; 16 development controls passed."
+  ],
+  "vendors": [
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "domains": [
+        "connect.facebook.net",
+        "facebook.com"
+      ],
+      "category": "advertising / conversion tracking",
+      "collects": [
+        "page views",
+        "conversion events",
+        "browser and device identifiers"
+      ],
+      "policyKeywords": [
+        "meta pixel",
+        "facebook pixel",
+        "meta platforms"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://developers.facebook.com/docs/meta-pixel/"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "google-analytics",
+      "name": "Google Analytics",
+      "domains": [
+        "googletagmanager.com",
+        "google-analytics.com"
+      ],
+      "category": "analytics",
+      "collects": [
+        "page views",
+        "device and browser data",
+        "approximate location"
+      ],
+      "policyKeywords": [
+        "google analytics"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://developers.google.com/analytics"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "mixpanel",
+      "name": "Mixpanel",
+      "domains": [
+        "mxpnl.com",
+        "mixpanel.com"
+      ],
+      "category": "product analytics",
+      "collects": [
+        "in-app events",
+        "device data",
+        "user identifiers"
+      ],
+      "policyKeywords": [
+        "mixpanel"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://docs.mixpanel.com/"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "segment",
+      "name": "Twilio Segment",
+      "domains": [
+        "segment.com",
+        "segment.io"
+      ],
+      "category": "customer data platform / analytics",
+      "collects": [
+        "events",
+        "user traits",
+        "device data"
+      ],
+      "policyKeywords": [
+        "twilio segment",
+        "segment"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://segment.com/docs/"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "domains": [
+        "intercom.io",
+        "intercomcdn.com"
+      ],
+      "category": "customer messaging",
+      "collects": [
+        "chat messages",
+        "user identifiers",
+        "page views"
+      ],
+      "policyKeywords": [
+        "intercom"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://developers.intercom.com/"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "domains": [
+        "js.stripe.com",
+        "m.stripe.network"
+      ],
+      "category": "payments (strictly necessary)",
+      "collects": [
+        "payment details",
+        "fraud-prevention signals"
+      ],
+      "policyKeywords": [
+        "stripe"
+      ],
+      "requiresConsent": false,
+      "sources": [
+        {
+          "url": "https://docs.stripe.com/js"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "hotjar",
+      "name": "Hotjar",
+      "domains": [
+        "static.hotjar.com",
+        "script.hotjar.com",
+        "hotjar.io"
+      ],
+      "category": "analytics",
+      "collects": [
+        "session recordings",
+        "heatmaps",
+        "rendered page content",
+        "user interactions",
+        "survey responses",
+        "form analytics",
+        "cookies"
+      ],
+      "policyKeywords": [
+        "hotjar",
+        "contentsquare"
+      ],
+      "requiresConsent": true,
+      "sources": [
+        {
+          "url": "https://technologychecker.io/technology/hotjar",
+          "quote": "Hotjar is a heatmap, session recording and survey tool for websites, owned by Contentsquare since 2021.",
+          "retrievedAt": "2026-10-17T20:16:52.954Z"
+        },
+        {
+          "url": "https://help.hotjar.com/hc/en-us/articles/36820004397713-Privacy-FAQs",
+          "quote": "In order to process data about your visit to a website, Hotjar stores first-party cookies on your browser.",
+          "retrievedAt": "2026-10-17T20:16:52.954Z"
+        },
+        {
+          "url": "https://www.scitepress.org/Papers/2023/121925/121925.pdf",
+          "quote": "Hotjar collects rendered page content.",
+          "retrievedAt": "2026-10-17T20:16:52.954Z"
+        },
+        {
+          "url": "https://technologychecker.io/technology/hotjar",
+          "quote": "Hotjar is used to see how visitors behave on a website, through heatmaps, session recordings and on-site surveys",
+          "retrievedAt": "2026-10-17T20:17:09.200Z"
+        },
+        {
+          "url": "https://help.hotjar.com/hc/en-us/articles/36820004397713-Privacy-FAQs",
+          "quote": "Hotjar stores first-party cookies on your browser.",
+          "retrievedAt": "2026-10-17T20:17:09.200Z"
+        },
+        {
+          "url": "https://help.hotjar.com/hc/en-us/articles/36819990621073-Processing-Personal-Data-in-Hotjar",
+          "quote": "As the Data Controller, you are principally responsible for (among other things) collecting consent",
+          "retrievedAt": "2026-10-17T20:17:09.200Z"
+        }
+      ],
+      "addedBy": "learner (learn-1792268202992)"
+    },
+    {
+      "id": "cloudflare-web-analytics",
+      "name": "Cloudflare Web Analytics",
+      "domains": [
+        "cloudflareinsights.com"
+      ],
+      "category": "cookieless website analytics and performance monitoring",
+      "collects": [
+        "page views",
+        "page URLs",
+        "referring pages",
+        "page-load timing and Core Web Vitals"
+      ],
+      "policyKeywords": [
+        "cloudflare",
+        "cloudflare web analytics",
+        "cloudflare insights"
+      ],
+      "requiresConsent": null,
+      "consentRationale": "Cloudflare documents this beacon as cookieless performance analytics without cross-site visitor tracking. Loading it before interaction alone does not establish a consent violation; requirements depend on the deployment and applicable rules.",
+      "sources": [
+        {
+          "url": "https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/",
+          "quote": "The Web Analytics performance beacon loads from https://static.cloudflareinsights.com/beacon.min.js.",
+          "retrievedAt": "2026-10-17T22:01:09.496Z"
+        },
+        {
+          "url": "https://www.cloudflare.com/web-analytics/",
+          "quote": "Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics.",
+          "retrievedAt": "2026-10-17T22:01:09.496Z"
+        }
+      ],
+      "addedBy": "maintainer review of observed beacon and official Cloudflare documentation"
+    }
+  ],
+  "brands": [
+    {
+      "id": "apple-app-store-badge",
+      "name": "Apple App Store badge",
+      "linkHosts": [
+        "apps.apple.com",
+        "itunes.apple.com"
+      ],
+      "assetHints": [
+        "app-store",
+        "appstore",
+        "app store"
+      ],
+      "maxAspectDeviation": 0.06,
+      "prohibitFilters": true,
+      "prohibitRotation": true,
+      "guidance": "Apple's App Store marketing guidelines ask that the badge artwork be used as provided: not stretched, recolored, rotated or otherwise altered.",
+      "sources": [
+        {
+          "url": "https://developer.apple.com/app-store/marketing/guidelines/"
+        }
+      ],
+      "addedBy": "seed"
+    },
+    {
+      "id": "google-play-badge",
+      "name": "Google Play badge",
+      "linkHosts": [
+        "play.google.com"
+      ],
+      "assetHints": [
+        "google-play",
+        "googleplay",
+        "google play"
+      ],
+      "maxAspectDeviation": 0.06,
+      "prohibitFilters": true,
+      "prohibitRotation": true,
+      "guidance": "Google Play's badge guidelines ask that the badge not be distorted, recolored or otherwise modified.",
+      "sources": [
+        {
+          "url": "https://partnermarketinghub.withgoogle.com/brands/google-play/"
+        }
+      ],
+      "addedBy": "seed"
+    }
+  ],
+  "probes": [
+    {
+      "id": "img-elements",
+      "name": "Image elements",
+      "description": "Measures <img> elements: natural vs drawn size (object-fit aware), CSS filter and transform.",
+      "code": "const out = [];\nfor (const img of document.querySelectorAll('img')) {\n  const r = img.getBoundingClientRect();\n  if (r.width < 2 || r.height < 2) continue;\n  const nW = img.naturalWidth, nH = img.naturalHeight;\n  if (!nW || !nH) continue;\n  const cs = getComputedStyle(img);\n  const px = (k) => parseFloat(cs[k]) || 0;\n  const boxW = r.width - px('paddingLeft') - px('paddingRight') - px('borderLeftWidth') - px('borderRightWidth');\n  const boxH = r.height - px('paddingTop') - px('paddingBottom') - px('borderTopWidth') - px('borderBottomWidth');\n  let dW = boxW, dH = boxH;\n  const fit = cs.objectFit;\n  if (fit === 'contain' || fit === 'cover' || fit === 'scale-down') {\n    let s = fit === 'cover' ? Math.max(boxW / nW, boxH / nH) : Math.min(boxW / nW, boxH / nH);\n    if (fit === 'scale-down') s = Math.min(1, s);\n    dW = nW * s; dH = nH * s;\n  } else if (fit === 'none') { dW = nW; dH = nH; }\n  out.push({ technique: 'img', selector: __lp.path(img), href: __lp.linkOf(img), imageUrl: img.currentSrc || img.src,\n    naturalW: nW, naturalH: nH, drawnW: dW, drawnH: dH, boxW, boxH, filter: cs.filter, transform: cs.transform, label: img.alt || '' });\n}\nreturn out;",
+      "addedBy": "seed",
+      "codeHash": "cd35ed666d0f"
+    },
+    {
+      "id": "background-artwork",
+      "name": "Background images",
+      "description": "Measures CSS background artwork on any element, resolving enclosing links and sizing per contain/cover/length/percent.",
+      "code": "const out = [];\nconst sizeCache = new Map();\nfor (const el of document.querySelectorAll('*')) {\n  const r = el.getBoundingClientRect();\n  if (r.width < 4 || r.height < 4) continue;\n  const cs = getComputedStyle(el);\n  const url = __lp.cssUrl(cs.backgroundImage);\n  if (!url) continue;\n  const absUrl = __lp.abs(url);\n  let nat = sizeCache.get(absUrl);\n  if (nat === undefined) {\n    nat = await __lp.naturalSize(absUrl);\n    sizeCache.set(absUrl, nat);\n  }\n  if (!nat || !nat.w || !nat.h) continue;\n  const nW = nat.w, nH = nat.h;\n\n  const px = (k) => parseFloat(cs[k]) || 0;\n  const bL = px('borderLeftWidth'), bR = px('borderRightWidth');\n  const bT = px('borderTopWidth'), bB = px('borderBottomWidth');\n  const pL = px('paddingLeft'), pR = px('paddingRight');\n  const pT = px('paddingTop'), pB = px('paddingBottom');\n\n  const origin = cs.backgroundOrigin || 'padding-box';\n  let bpaW = r.width, bpaH = r.height;\n  if (origin === 'padding-box') { bpaW -= bL + bR; bpaH -= bT + bB; }\n  else if (origin === 'content-box') { bpaW -= bL + bR + pL + pR; bpaH -= bT + bB + pT + pB; }\n  if (bpaW <= 0 || bpaH <= 0) continue;\n\n  const size = (cs.backgroundSize || 'auto auto').split(/\\s*,\\s*/)[0].trim().split(/\\s+/);\n  let wSpec = size[0] || 'auto';\n  let hSpec = size[1] || 'auto';\n\n  let drawnW, drawnH;\n  if (wSpec === 'contain' || hSpec === 'contain') {\n    const s = Math.min(bpaW / nW, bpaH / nH);\n    drawnW = nW * s; drawnH = nH * s;\n  } else if (wSpec === 'cover' || hSpec === 'cover') {\n    const s = Math.max(bpaW / nW, bpaH / nH);\n    drawnW = nW * s; drawnH = nH * s;\n  } else {\n    const toPx = (v, base) => v.endsWith('%') ? (parseFloat(v) / 100) * base : parseFloat(v);\n    let w = wSpec === 'auto' ? null : toPx(wSpec, bpaW);\n    let h = hSpec === 'auto' ? null : toPx(hSpec, bpaH);\n    if (w === null && h === null) { w = nW; h = nH; }\n    else if (w === null) { const s = h / nH; w = nW * s; }\n    else if (h === null) { const s = w / nW; h = nH * s; }\n    drawnW = w; drawnH = h;\n  }\n\n  out.push({\n    technique: 'background',\n    selector: __lp.path(el),\n    href: __lp.linkOf(el),\n    imageUrl: absUrl,\n    naturalW: nW, naturalH: nH,\n    drawnW, drawnH,\n    boxW: bpaW, boxH: bpaH,\n    filter: cs.filter, transform: cs.transform,\n    label: (el.getAttribute('aria-label') || el.textContent || '').trim()\n  });\n}\nreturn out;",
+      "addedBy": "learner (learn-1792268202992)",
+      "codeHash": "d7abf6010569"
+    },
+    {
+      "id": "svg-artwork",
+      "name": "SVG artwork",
+      "description": "Measures SVG artwork",
+      "code": "const out = [];\nconst hosts = ['apps.apple.com','itunes.apple.com','play.google.com'];\nfor (const outer of document.querySelectorAll('svg')) {\n    if (outer.tagName !== 'svg') continue;\n    if (outer.closest('defs')) continue;\n    if (outer.closest('svg') !== outer) continue;\n    let hidden = false;\n    for (let a = outer.parentElement; a && a !== document.documentElement; a = a.parentElement) {\n        const cs = getComputedStyle(a);\n        if (cs.display === 'none' || cs.visibility === 'hidden' || cs.visibility === 'collapse') { hidden = true; break; }\n    }\n    if (hidden) continue;\n    const anchor = outer.closest('a');\n    if (!anchor) continue;\n    const hrefLink = __lp.linkOf(outer) || anchor.href || '';\n    if (!hrefLink) continue;\n    let host;\n    try { host = new URL(hrefLink).hostname; } catch { continue; }\n    if (!hosts.includes(host)) continue;\n    const rect = outer.getBoundingClientRect();\n    if (rect.width <= 0 || rect.height <= 0) continue;\n    const useEl = outer.querySelector('use');\n    let source = outer;\n    if (useEl) {\n        const href = useEl.getAttributeNS('http://www.w3.org/1999/xlink','href') || useEl.getAttribute('href');\n        if (!href || !href.startsWith('#')) continue;\n        const target = document.getElementById(href.slice(1));\n        if (!target || (target.tagName !== 'svg' && target.tagName !== 'symbol')) continue;\n        source = target;\n    }\n    let naturalW = 0, naturalH = 0;\n    const vb = source.getAttribute('viewBox');\n    if (vb) {\n        const p = vb.trim().split(/\\s+/);\n        if (p.length >= 4) { naturalW = +p[2]; naturalH = +p[3]; }\n    }\n    if (!naturalW || !naturalH || !isFinite(naturalW) || !isFinite(naturalH) || naturalW <= 0 || naturalH <= 0) {\n        const w = +source.getAttribute('width'), h = +source.getAttribute('height');\n        if (!isNaN(w) && w > 0 && !isNaN(h) && h > 0) { naturalW = w; naturalH = h; }\n    }\n    if (!naturalW || !naturalH || !isFinite(naturalW) || !isFinite(naturalH) || naturalW <= 0 || naturalH <= 0) continue;\n    let VW, VH;\n    if (useEl) {\n        const w = +useEl.getAttribute('width'), h = +useEl.getAttribute('height');\n        if (!isNaN(w) && w > 0 && !isNaN(h) && h > 0) { VW = w; VH = h; }\n    }\n    if (typeof VW !== 'number' || VW <= 0 || typeof VH !== 'number' || VH <= 0) {\n        VW = outer.clientWidth; VH = outer.clientHeight;\n    }\n    if (VW <= 0 || VH <= 0) continue;\n    const refEl = (useEl && useEl.getAttribute('width') !== null && useEl.getAttribute('height') !== null) ? useEl : outer;\n    let preserve = refEl.getAttribute('preserveAspectRatio');\n    if (preserve === null) preserve = source.getAttribute('preserveAspectRatio') || 'xMidYMid meet';\n    const t = preserve.trim().split(/\\s+/);\n    const align = t[0] || 'xMidYMid';\n    const meetOrSlice = t[1] || 'meet';\n    const isNone = align === 'none';\n    const isSlice = meetOrSlice === 'slice';\n    let paintedW, paintedH;\n    if (isNone) { paintedW = VW; paintedH = VH; }\n    else {\n        const scale = isSlice ? Math.max(VW / naturalW, VH / naturalH) : Math.min(VW / naturalW, VH / naturalH);\n        paintedW = naturalW * scale; paintedH = naturalH * scale;\n    }\n    const lw = outer.clientWidth, lh = outer.clientHeight;\n    if (lw <= 0 || lh <= 0) continue;\n    const drawnW = paintedW * (rect.width / lw);\n    const drawnH = paintedH * (rect.height / lh);\n    if (!isFinite(drawnW) || !isFinite(drawnH) || drawnW <= 0 || drawnH <= 0) continue;\n    const style = getComputedStyle(outer);\n    const filter = style.filter || 'none';\n    const transform = style.transform || 'none';\n    let label = outer.getAttribute('aria-label') || '';\n    if (!label) { const ti = outer.querySelector('title'); if (ti && ti.textContent) label = ti.textContent.trim(); }\n    const NS = 'http://www.w3.org/2000/svg';\n    function cloneResolved(el) {\n        const f = document.createDocumentFragment();\n        for (const c of el.childNodes) {\n            if (c.nodeType !== 1) { f.appendChild(c.cloneNode(true)); continue; }\n            if (c.tagName === 'use') {\n                const hu = c.getAttributeNS('http://www.w3.org/1999/xlink','href') || c.getAttribute('href');\n                if (hu && hu.startsWith('#')) {\n                    const tt = document.getElementById(hu.slice(1));\n                    if (tt) { f.appendChild(cloneResolved(tt.cloneNode(true))); continue; }\n                }\n            }\n            f.appendChild(c.cloneNode(true));\n        }\n        return f;\n    }\n    const root = document.createElementNS(NS,'svg');\n    root.setAttribute('xmlns',NS);\n    root.setAttribute('viewBox',`0 0 ${naturalW} ${naturalH}`);\n    root.setAttribute('width',String(naturalW));\n    root.setAttribute('height',String(naturalH));\n    root.appendChild(cloneResolved(source));\n    const dataUrl = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(new XMLSerializer().serializeToString(root));\n    out.push({technique:'inline-svg',selector:__lp.path(outer),href:hrefLink,imageUrl:dataUrl,naturalW,naturalH,drawnW,drawnH,filter,transform,label});\n}\nreturn out;",
+      "addedBy": "Nemotron learner (checker-2026-10-17T23-36-08-002Z)",
+      "codeHash": "0e1ef04d4dcf"
+    },
+    {
+      "id": "text-store-links",
+      "name": "Text-only store links",
+      "description": "Distinguishes plain-text links from badge artwork",
+      "code": "const allowed = [\"apps.apple.com\",\"itunes.apple.com\",\"play.google.com\"];\n  const out = [];\n  const anchors = document.querySelectorAll(\"a\");\n  for (const anchor of anchors) {\n    try {\n      if (anchor.shadowRoot) continue;\n      const children = anchor.querySelectorAll(\":scope > *\");\n      if (children.length > 0) continue;\n      const href = anchor.href || \"\";\n      let host = \"\";\n      try { host = new URL(href).hostname; } catch { continue; }\n      if (!allowed.includes(host)) continue;\n      const text = (anchor.textContent || \"\").trim().replace(/\\s+/g,\" \");\n      if (!text) continue;\n      const rect = anchor.getBoundingClientRect();\n      if (rect.width < 4 || rect.height < 4) continue;\n      const style = getComputedStyle(anchor);\n      const before = getComputedStyle(anchor,\"::before\");\n      const after = getComputedStyle(anchor,\"::after\");\n      const artworkProps = [\"backgroundImage\",\"maskImage\",\"borderImageSource\",\"content\"];\n      const hasArtwork = (el) => {\n        if (!el) return false;\n        for (const prop of artworkProps) {\n          const val = el[prop] || \"\";\n          const trimmed = val.trim();\n          if (!trimmed) continue;\n          const lower = trimmed.toLowerCase();\n          if (lower === \"none\" || lower === \"normal\" || lower === '\"\"' || lower === \"''\") continue;\n          return true;\n        }\n        return false;\n      };\n      if (hasArtwork(style) || hasArtwork(before) || hasArtwork(after)) continue;\n      let hidden = false;\n      let node = anchor;\n      while (node) {\n        const cs = getComputedStyle(node);\n        if (cs.visibility === \"hidden\" || cs.visibility === \"collapse\" || cs.display === \"none\") { hidden = true; break; }\n        if (cs.opacity === \"0\") { hidden = true; break; }\n        node = node.parentElement;\n      }\n      if (hidden) continue;\n      out.push({kind:\"text-only\",selector:__lp.path(anchor),href,text});\n    } catch { continue; }\n  }\n  return out;",
+      "kind": "store-link-classifier",
+      "addedBy": "Nemotron learner (checker-2026-10-18T01-11-43-266Z)",
+      "codeHash": "c30d565ea588"
+    }
+  ]
+}

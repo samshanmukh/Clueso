@@ -19,7 +19,7 @@ export interface BrandRule {
   guidance: string; sources: Source[]; addedBy: string;
 }
 /** An inspection probe: async JS function body run inside the page. Returns AssetInstance[]. */
-export interface Probe { id: string; name: string; description: string; code: string; addedBy: string; codeHash?: string }
+export interface Probe { kind?: 'assets'|'store-link-classifier'; id: string; name: string; description: string; code: string; addedBy: string; codeHash?: string }
 export interface BrainVersion {
   version: string; parent: string | null; createdAt: string;
   vendors: Vendor[]; brands: BrandRule[]; probes: Probe[]; changelog: string[];

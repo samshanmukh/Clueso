@@ -1,0 +1,1701 @@
+{
+ "url": "http://localhost:4300/app?audit=job-2026-10-18T02-27-07-368Z",
+ "at": "2026-10-24T18:04:23.802Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.69,
+    0.72
+   ],
+   "motion": {
+    "elements": 51,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 49,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 987,
+     "screens": 1.1,
+     "words": 435,
+     "img": 2,
+     "video": 0,
+     "canvas": 12,
+     "svg": 9,
+     "sections": 11,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "pre.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 1,
+     "size": 18,
+     "vw": 1.3,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 60,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "lines": 1,
+     "size": 18,
+     "font": "Albert Sans"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 0.71,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.29,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 13,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 11.7
+     },
+     "measureChars": 32,
+     "max": {
+      "size": 18,
+      "vw": 1.3,
+      "font": "Albert Sans",
+      "text": "3 verified issues · 8 need review"
+     },
+     "monoShare": 0.29,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 32
+    },
+    "eyebrows": [],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.5,
+      "top": 418
+     },
+     {
+      "text": "02",
+      "size": 11.5,
+      "top": 490
+     },
+     {
+      "text": "03",
+      "size": 11.5,
+      "top": 562
+     },
+     {
+      "text": "04",
+      "size": 11.5,
+      "top": 651
+     },
+     {
+      "text": "05",
+      "size": 11.5,
+      "top": 723
+     },
+     {
+      "text": "06",
+      "size": 11.5,
+      "top": 777
+     },
+     {
+      "text": "07",
+      "size": 11.5,
+      "top": 831
+     },
+     {
+      "text": "08",
+      "size": 11.5,
+      "top": 903
+     },
+     {
+      "text": "09",
+      "size": 11.5,
+      "top": 992
+     }
+    ],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 46,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 229,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#e7e7e7",
+       "top": 230,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2c2c2c",
+       "share": 0.69
+      },
+      {
+       "color": "#686868",
+       "share": 0.23
+      },
+      {
+       "color": "#727272",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f5",
+       "share": 0.02
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f0f0f0",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.94
+      },
+      "fg": "#2c2c2c"
+     },
+     "lowContrast": [
+      {
+       "text": "Evidence first. Uncertainty visible.",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Reasoning by NVIDIA Nemotron on Crusoe ·",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 8,
+     "radius": 4,
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to workspace",
+      "Dark",
+      "Commands ⌘K",
+      "01 Google Analytics loads before the vis",
+      "brain v4"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.screenshot-wrap → rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 1,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 9,
+     "hairlineSamples": [
+      "header.topbar 1440px",
+      "div#report.workspace 1440px",
+      "section.pane.preview-pane 828px",
+      "section.browser-bar.audit-bar 827px",
+      "div.preview-foot 827px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.29
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 46,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans",
+     "ibm plex mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 987,
+    "margins": {
+     "left": 8,
+     "right": 18
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "3 verified issues · 8 need review",
+      "size": 18,
+      "top": 60,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 38,
+      "n": 1
+     },
+     {
+      "x": 1117,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 13,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.01,
+    "voidBox": {
+     "x": 1320,
+     "y": 180,
+     "w": 120,
+     "h": 120
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#ffffff",
+    "sidebar": null,
+    "topbar": {
+     "h": 46
+    },
+    "canvas": {
+     "left": 8,
+     "right": 18
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 1,
+     "size": 18,
+     "vw": 1.3,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 60,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 5,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 7,
+     "radii": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       8,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 24,
+     "leftAligned": 24,
+     "figures": 11,
+     "tabularShare": 1,
+     "kpiMax": 11.5
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.97,
+     "tiny": 2,
+     "tinySamples": [
+      "Fresh browser context, p 10px",
+      "Recommended fix · not ap 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      20,
+      26
+     ]
+    },
+    "title": {
+     "text": "3 verified issues · 8 need review",
+     "size": 18,
+     "top": 60
+    },
+    "colourShare": 0.024
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.68,
+    0.66
+   ],
+   "motion": {
+    "elements": 51,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 49,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1594,
+     "screens": 1.6,
+     "words": 435,
+     "img": 2,
+     "video": 0,
+     "canvas": 12,
+     "svg": 9,
+     "sections": 11,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "pre.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 1,
+     "size": 18,
+     "vw": 2.3,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 60,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "lines": 1,
+     "size": 18,
+     "font": "Albert Sans"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 0.71,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.29,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 13,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 11.7
+     },
+     "measureChars": 27,
+     "max": {
+      "size": 18,
+      "vw": 2.3,
+      "font": "Albert Sans",
+      "text": "3 verified issues · 8 need review"
+     },
+     "monoShare": 0.29,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 32
+    },
+    "eyebrows": [],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.5,
+      "top": 496
+     },
+     {
+      "text": "02",
+      "size": 11.5,
+      "top": 585
+     },
+     {
+      "text": "03",
+      "size": 11.5,
+      "top": 675
+     },
+     {
+      "text": "04",
+      "size": 11.5,
+      "top": 764
+     },
+     {
+      "text": "05",
+      "size": 11.5,
+      "top": 836
+     },
+     {
+      "text": "06",
+      "size": 11.5,
+      "top": 907
+     },
+     {
+      "text": "07",
+      "size": 11.5,
+      "top": 979
+     },
+     {
+      "text": "08",
+      "size": 11.5,
+      "top": 1051
+     },
+     {
+      "text": "09",
+      "size": 11.5,
+      "top": 1140
+     }
+    ],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 46,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 307,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#e7e7e7",
+       "top": 308,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2c2c2c",
+       "share": 0.69
+      },
+      {
+       "color": "#686868",
+       "share": 0.23
+      },
+      {
+       "color": "#727272",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f5",
+       "share": 0.02
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f0f0f0",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.94
+      },
+      "fg": "#2c2c2c"
+     },
+     "lowContrast": [
+      {
+       "text": "Evidence first. Uncertainty visible.",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Reasoning by NVIDIA Nemotron on Crusoe ·",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 6,
+     "radius": 4,
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to workspace",
+      "Dark",
+      "Commands ⌘K",
+      "brain v4",
+      "Run audit"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.screenshot-wrap → rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 1,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 12,
+     "hairlineSamples": [
+      "header.topbar 768px",
+      "div.agent-card.site-agent-card 242px",
+      "div.agent-card.site-agent-card 242px",
+      "div.agent-card.site-agent-card 242px",
+      "div#report.workspace 768px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.18
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 46,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans",
+     "ibm plex mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1594,
+    "margins": {
+     "left": 8,
+     "right": 14
+    },
+    "sections": [
+     {
+      "sel": "section#agent-roster-root",
+      "tag": "section",
+      "top": 116,
+      "height": 179,
+      "words": 44,
+      "media": 0,
+      "middle": 52,
+      "heading": {
+       "text": "Inspection team",
+       "size": 12,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#inspection-dock",
+      "tag": "div",
+      "top": 307,
+      "height": 1245,
+      "words": 384,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Findings",
+       "size": 12,
+       "tag": "h2"
+      },
+      "left": 8,
+      "right": 8,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "3 verified issues · 8 need review",
+      "size": 18,
+      "top": 60,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 1
+     },
+     {
+      "x": 38,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 13,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#ffffff",
+    "sidebar": null,
+    "topbar": {
+     "h": 46
+    },
+    "canvas": {
+     "left": 8,
+     "right": 14
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 1,
+     "size": 18,
+     "vw": 2.3,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 60,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 6,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 102,
+       "at": 790,
+       "panel": "Captured page"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 10,
+     "radii": [
+      [
+       0,
+       7
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       8,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 24,
+     "leftAligned": 24,
+     "figures": 11,
+     "tabularShare": 1,
+     "kpiMax": 11.5
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.97,
+     "tiny": 2,
+     "tinySamples": [
+      "Fresh browser context, p 10px",
+      "Recommended fix · not ap 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      20,
+      26
+     ]
+    },
+    "title": {
+     "text": "3 verified issues · 8 need review",
+     "size": 18,
+     "top": 60
+    },
+    "colourShare": 0.019
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.65,
+    0.61,
+    0.72
+   ],
+   "motion": {
+    "elements": 51,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 49,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2506,
+     "screens": 3,
+     "words": 434,
+     "img": 2,
+     "video": 0,
+     "canvas": 12,
+     "svg": 9,
+     "sections": 11,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "pre.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 2,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 101,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "lines": 2,
+     "size": 28,
+     "font": "Albert Sans"
+    },
+    "headings": [
+     {
+      "text": "3 verified issues · 8 need review",
+      "words": 7,
+      "chars": 33,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Albert Sans",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 101,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Albert Sans",
+       "share": 0.71,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.29,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      28
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Albert Sans",
+      "size": 13,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 11.7
+     },
+     "measureChars": 50,
+     "max": {
+      "size": 28,
+      "vw": 7.2,
+      "font": "Albert Sans",
+      "text": "3 verified issues · 8 need review"
+     },
+     "monoShare": 0.29,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 32
+    },
+    "eyebrows": [],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.5,
+      "top": 1194
+     },
+     {
+      "text": "02",
+      "size": 11.5,
+      "top": 1265
+     },
+     {
+      "text": "03",
+      "size": 11.5,
+      "top": 1337
+     },
+     {
+      "text": "04",
+      "size": 11.5,
+      "top": 1409
+     },
+     {
+      "text": "05",
+      "size": 11.5,
+      "top": 1463
+     },
+     {
+      "text": "06",
+      "size": 11.5,
+      "top": 1517
+     },
+     {
+      "text": "07",
+      "size": 11.5,
+      "top": 1571
+     },
+     {
+      "text": "08",
+      "size": 11.5,
+      "top": 1625
+     },
+     {
+      "text": "09",
+      "size": 11.5,
+      "top": 1697
+     }
+    ],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 87,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 498,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#e7e7e7",
+       "top": 499,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2c2c2c",
+       "share": 0.69
+      },
+      {
+       "color": "#686868",
+       "share": 0.23
+      },
+      {
+       "color": "#727272",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f5",
+       "share": 0.02
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f0f0f0",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.94
+      },
+      "fg": "#2c2c2c"
+     },
+     "lowContrast": [
+      {
+       "text": "Evidence first. Uncertainty visible.",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Reasoning by NVIDIA Nemotron on Crusoe ·",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#727272",
+       "bg": "#f5f5f5"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 6,
+     "radius": 4,
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to workspace",
+      "Dark",
+      "Commands",
+      "brain v4",
+      "Run audit"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.screenshot-wrap → rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 1,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 10,
+     "hairlineSamples": [
+      "header.topbar 390px",
+      "div#report.workspace 390px",
+      "aside.pane.findings-pane 390px",
+      "section.pane.preview-pane 390px",
+      "section.browser-bar.audit-bar 390px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 87,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "albert sans",
+     "ibm plex mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2506,
+    "margins": {
+     "left": 8,
+     "right": 8
+    },
+    "sections": [
+     {
+      "sel": "div.title-row.workspace-summary",
+      "tag": "div",
+      "top": 87,
+      "height": 143,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "3 verified issues · 8 need review",
+       "size": 28,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 63,
+      "textLeft": 16,
+      "textRight": 63,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#agent-roster-root",
+      "tag": "section",
+      "top": 230,
+      "height": 256,
+      "words": 44,
+      "media": 0,
+      "middle": 20,
+      "heading": {
+       "text": "Inspection team",
+       "size": 12,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 12,
+      "textLeft": 16,
+      "textRight": 12,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#inspection-dock",
+      "tag": "div",
+      "top": 498,
+      "height": 1914,
+      "words": 387,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Findings",
+       "size": 12,
+       "tag": "h2"
+      },
+      "left": 8,
+      "right": 8,
+      "textLeft": 12,
+      "textRight": 10,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "3 verified issues · 8 need review",
+      "size": 28,
+      "top": 101,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Independent verification",
+      "side": "right",
+      "px": 12
+     },
+     {
+      "text": "Examples",
+      "side": "left",
+      "px": 12
+     },
+     {
+      "text": "Saved runs",
+      "side": "left",
+      "px": 12
+     },
+     {
+      "text": "Before consent · captured evidence",
+      "side": "left",
+      "px": 14
+     },
+     {
+      "text": "Network / policy evidence",
+      "side": "left",
+      "px": 14
+     },
+     {
+      "text": "01 · Google Analytics loads before the visitor giv",
+      "side": "left",
+      "px": 14
+     }
+    ],
+    "edges": [
+     {
+      "x": 16,
+      "n": 1
+     },
+     {
+      "x": 34,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 13,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#ffffff",
+    "sidebar": null,
+    "topbar": {
+     "h": 87
+    },
+    "canvas": {
+     "left": 8,
+     "right": 8
+    },
+    "hero": {
+     "text": "3 verified issues · 8 need review",
+     "words": 7,
+     "chars": 33,
+     "lines": 2,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Albert Sans",
+     "weight": 600,
+     "tracking": -0.01,
+     "leading": 1.25,
+     "top": 101,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 3,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 8,
+     "radii": [
+      [
+       0,
+       6
+      ],
+      [
+       8,
+       1
+      ],
+      [
+       4,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 24,
+     "leftAligned": 24,
+     "figures": 11,
+     "tabularShare": 1,
+     "kpiMax": 11.5
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.97,
+     "tiny": 2,
+     "tinySamples": [
+      "Fresh browser context, p 10px",
+      "Recommended fix · not ap 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      20,
+      26,
+      28
+     ]
+    },
+    "title": {
+     "text": "3 verified issues · 8 need review",
+     "size": 28,
+     "top": 101
+    },
+    "colourShare": 0.044
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Evidence first. Uncertainty visible.\" 4.4:1 needs 4.5:1; \"Reasoning by NVIDIA Nemotron on Crusoe ·\" 4.4:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "numeric-align",
+   "width": 1440,
+   "message": "24 of 24 numeric table cells are left-aligned.",
+   "fix": "Right-align numbers, amounts and percentages (and their column headers) so the digits line up.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "97% of the text is under 13px.",
+   "fix": "Data and labels read at 13–14px; keep 11–12px for sublines and axis ticks.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "edge-text",
+   "width": 390,
+   "message": "6 text block(s) sit 12–15px from the phone's edge: \"Independent verification\" (12px); \"Examples\" (12px); \"Saved runs\" (12px)",
+   "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/desktop-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/tablet-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/mobile-fold.jpg",
+   "pages": [
+    "/Users/sam/Documents/GitHub/Clueso/.taste-skill/inspect-app/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

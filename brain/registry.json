@@ -1,9 +1,11 @@
 {
-  "active": "v2",
+  "active": "v4",
   "versions": [
     "v0",
     "v1",
-    "v2"
+    "v2",
+    "v3",
+    "v4"
   ],
   "decisions": [
     {
@@ -103,6 +105,56 @@
         "Manual reviewed knowledge addition, not an autonomous learning-gate accuracy claim. Official documentation identifies the observed beacon.",
         "16 targeted regression tests and type checking passed; executable probes and existing vendor rules unchanged.",
         "Stored snapshot resolves the unknown domain to Cloudflare Web Analytics and retains the missing-disclosure candidate; no blanket consent violation inferred."
+      ]
+    },
+    {
+      "parent": "v2",
+      "candidate": "v3",
+      "at": "2026-10-17T23:36:56.379Z",
+      "kind": "probe",
+      "accepted": true,
+      "summary": "SVG checker retained after real-site transfer and regression checks.",
+      "parentMetrics": {
+        "svgMeasurements": 0,
+        "tp": 6,
+        "fp": 0,
+        "unresolved": 0
+      },
+      "candidateMetrics": {
+        "svgMeasurements": 6,
+        "tp": 6,
+        "fp": 0,
+        "unresolved": 0
+      },
+      "reasons": [
+        "6 independently reproduced new SVG measurements on real held-out sites.",
+        "12 development measurement cases passed; no new false findings or lost detections on development regression apps.",
+        "This measures inspection coverage, not real-world compliance accuracy."
+      ]
+    },
+    {
+      "parent": "v3",
+      "candidate": "v4",
+      "at": "2026-10-18T01:12:32.047Z",
+      "kind": "probe",
+      "accepted": true,
+      "summary": "Text-link checker retained after real-site transfer and regression checks.",
+      "parentMetrics": {
+        "textLinksClassified": 0,
+        "tp": 6,
+        "fp": 0,
+        "unresolved": 0
+      },
+      "candidateMetrics": {
+        "textLinksClassified": 4,
+        "tp": 6,
+        "fp": 0,
+        "unresolved": 0
+      },
+      "reasons": [
+        "4 independently reproduced text-only store-link classifications on real held-out sites.",
+        "16 development measurement cases passed; no new false findings or lost detections on development regression apps.",
+        "This measures inspection coverage, not real-world compliance accuracy."
       ]
     }
   ]

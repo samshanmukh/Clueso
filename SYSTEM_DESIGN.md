@@ -6,6 +6,8 @@ Implemented follow-up: the audit pipeline now sends a single labeled reference/c
 
 Checker promotion now includes nine synthetic development measurement cases. A separate evaluator fingerprints the frozen brain before creating fresh synthetic apps, then compares v0 and the candidate with inference disabled and fresh browser verification. The learned background-artwork checker is active in v1; evidence and commands are described in README.md.
 
+Implemented scope update: Apple badge height and nearest-content spacing produce measured review leads with official-source guidance and placement exceptions. These are maintainer-authored rules. The real SVG learning pipeline generates executable probes with Nemotron, validates twelve fixed cases, freezes before real holdouts, reproduces measurements independently without inference, and gates retention on regression checks. A pipeline being implemented does not imply its latest candidate passed; the saved experiment result is authoritative.
+
 Last updated: October 17, 2026.
 
 ## 1. Product
